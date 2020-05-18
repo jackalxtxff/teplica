@@ -1,0 +1,6 @@
+RewriteEngine On
+
+RewriteRule ^(\w+)$ /teplica/$1.php [L,NC]
+RewriteRule ^price-list$ /tvorec/price-list.php [L]
+
+ErrorDocument 404 /teplica/404.html
