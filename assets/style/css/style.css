@@ -64,7 +64,7 @@ nav {
 main {
   padding-left: 5%;
   padding-top: 4%;
-  position: relative;
+  /* position: relative; */
 }
 
 .transition-fade {
@@ -77,18 +77,18 @@ html.is-animating .transition-fade {
 }
 
 .glav img {
-  max-width: 400px;
-  height: auto;
+  /* max-width: 400px;
+  height: auto; */
 }
 
 .glav {
-  margin-left: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .center {
-  position: absolute;
-  right: 12%;
-  bottom: 40%;
   font-size: 25px;
   padding-right: 14px;
   color: #59A857;
@@ -96,6 +96,9 @@ html.is-animating .transition-fade {
 
 .mw-100 {
   max-width: 100%;
+}
+.img_center{
+width: 400px;
 }
 
 a.button-1 {
