@@ -1,12 +1,28 @@
-menu.onclick = function myFunction() {
-  var x = document.getElementById("myTopnav");
+// menu.onclick = function myFunction() {
+//   var x = document.getElementById("myTopnav");
+//
+//   if (x.className === "topnav") {
+//     x.className += " responsive"
+//   } else {
+//     x.className = "topnav";
+//   };
+// };
 
-  if (x.className === "topnav") {
-    x.className += " responsive"
-  } else {
-    x.className = "topnav";
-  };
-};
+function openNav() {
+  let styles = {
+    "z-index": "1002",
+    "display": "block",
+    "opacity": "0.5"
+  }
+  $("#mySidenav").css("width", "250");
+  $('.sidenav-overlay').css(styles);
+}
+
+function closeNav() {
+  $("#mySidenav").css("width", "0");
+  $(".sidenav-overlay").removeAttr("style");
+}
+
 
 
 $(document).ready(function() {
