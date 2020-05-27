@@ -1,0 +1,6 @@
+RewriteEngine On
+
+RewriteRule ^(\w+)$ /SHOP/$1.php [L,NC]
+RewriteRule ^price-list$ /SHOP/price-list.php [L]
+
+ErrorDocument 404 /SHOP/404.html
