@@ -62,9 +62,7 @@ nav {
 }
 
 main {
-  padding-left: 5%;
   padding-top: 4%;
-  /* position: relative; */
 }
 
 .transition-fade {
@@ -91,6 +89,7 @@ html.is-animating .transition-fade {
 .center {
   font-size: 25px;
   padding-right: 14px;
+  padding-left: 4%;
   color: #59A857;
 }
 
