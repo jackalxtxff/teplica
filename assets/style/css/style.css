@@ -64,7 +64,7 @@ nav {
 main {
   padding-left: 5%;
   padding-top: 4%;
-  position: relative;
+  /* position: relative; */
 }
 
 .transition-fade {
@@ -82,11 +82,14 @@ html.is-animating .transition-fade {
 }
 
 .glav {
-  margin-left: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .center {
-  position: absolute;
+  /* position: absolute; */
   right: 12%;
   bottom: 40%;
   font-size: 25px;
@@ -96,6 +99,9 @@ html.is-animating .transition-fade {
 
 .mw-100 {
   max-width: 100%;
+}
+.img_center{
+width: 400px;
 }
 
 a.button-1 {
