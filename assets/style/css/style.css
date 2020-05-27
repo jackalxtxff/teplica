@@ -296,7 +296,7 @@ hr {
 }
 
 .wrap .text_about {
-  padding-right: 45px;
+  padding: 0 45px;
 }
 
 .block_otvet h3 {
@@ -598,5 +598,10 @@ textarea {
   }
   footer{
     max-width: 955px;
+  }
+}
+@media only screen and (max-width: 600px){
+  .text_about p{
+    padding: 0;
   }
 }
