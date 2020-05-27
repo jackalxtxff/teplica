@@ -324,7 +324,7 @@ p {
 }
 
 .form {
-  width: 50%;
+  width: 600px;
   position: relative;
 }
 
@@ -599,7 +599,10 @@ textarea {
   footer{
     max-width: 955px;
   }
-
+ .form{
+   width: 600px;
+   margin: 0 auto;
+ }
 
 }
 @media only screen and (max-width: 600px){
