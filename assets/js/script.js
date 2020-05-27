@@ -14,7 +14,11 @@ function openNav() {
     "display": "block",
     "opacity": "0.5"
   }
-  $("#mySidenav").css("width", "250");
+  if ($(window).width() <= '600') {
+    $("#mySidenav").css("width", "70%");
+  } else {
+    $("#mySidenav").css("width", "60%");
+  }
   $('.sidenav-overlay').css(styles);
 }
 
@@ -22,6 +26,10 @@ function closeNav() {
   $("#mySidenav").css("width", "0");
   $(".sidenav-overlay").removeAttr("style");
 }
+
+$('.sidenav-overlay').click(function() {
+  closeNav();
+})
 
 
 
@@ -41,12 +49,12 @@ $(document).ready(function() {
       "opacity": "0.5"
     }
 
-		$(".modal .product_name").text($(clickButton).parents().find(".product_name").text());
+    $(".modal .product_name").text($(clickButton).parents().find(".product_name").text());
     $(".modal").css(styles);
-		$(".modal-overlay").css(styles2);
+    $(".modal-overlay").css(styles2);
   })
-	$(".modal-close").click(function() {
-		$(".modal").removeAttr("style");
-		$(".modal-overlay").removeAttr("style");
-	})
+  $(".modal-close").click(function() {
+    $(".modal").removeAttr("style");
+    $(".modal-overlay").removeAttr("style");
+  })
 });

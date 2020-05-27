@@ -30,6 +30,11 @@ header {
   box-sizing: border-box;
 }
 
+.logo-text {
+  display: none;
+  color: green;
+}
+
 nav {
   margin: auto;
   padding-top: 3%;
@@ -518,6 +523,7 @@ textarea {
   background: #000;
   display: none;
   will-change: opacity;
+  transition: 0.5s;
 }
 
 .sidenav {
@@ -609,10 +615,22 @@ textarea {
   .text_about p{
     padding: 0;
   }
+
   h1{
     font-size: 24px;
-     margin-left: 50px;
+    margin-left: 50px;
+  }
 
+  .logo-img {
+    display: none;
+  }
+
+  .logo-text {
+    display: block;
+  }
+
+  header {
+    align-items: center;
   }
 }
 @media only screen and (max-width: 1100px){
