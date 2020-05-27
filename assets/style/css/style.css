@@ -18,7 +18,7 @@ body {
 }
 
 header {
-  width: 100%;
+
   background-color: white;
   display: flex;
 }
@@ -128,6 +128,11 @@ a.button-1:active {
   background: #006e00;
   box-shadow: inset 0 0 5px 3px rgba(0, 0, 0, 0.8), inset rgba(0, 0, 0, 0.3) -5px -5px 8px 5px, inset rgba(255, 255, 255, 0.5) 5px 5px 8px 5px, 1px 1px 1px rgba(255, 255, 255, 0.2), -2px -2px 5px rgba(0, 0, 0, 0.5);
 }
+.button-2{
+	width: 90px;
+	margin: 0 auto;
+	padding: 30px 0px;
+}
 
 .modal_content {
   margin: 0 auto;
@@ -148,7 +153,7 @@ footer {
   height: auto;
   background: #59A857;
   margin-top: 50px;
-  
+
   text-align: center;
 }
 
@@ -558,21 +563,19 @@ textarea {
     width: auto;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 955px) {
   .topnav a {
     display: none;
   }
 
   .topnav a.icon {
     float: right;
-    margin-top: -17px;
     display: block;
     color: black;
   }
 
   nav {
     width: 100%;
-    height: 100px;
     text-align: center;
   }
 
@@ -590,5 +593,8 @@ textarea {
     float: none;
     display: block;
     text-align: left;
+  }
+  footer{
+    max-width: 955px;
   }
 }
