@@ -194,11 +194,12 @@ h1 {
 .wrapper {
   padding-top: 10px;
   padding-bottom: 40px;
-  padding-right: 40px;
+  padding-right: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
+
 }
 
 .block_shop img {
@@ -301,7 +302,11 @@ hr {
 }
 
 .wrap .text_about {
-  padding: 0 45px;
+  padding: 10px 45px;
+  font-size: 20px;
+  color: gray;
+  max-width: 600px;
+}
 }
 
 .block_otvet h3 {
@@ -315,11 +320,14 @@ p {
 
 .block_otvet {
   margin-top: 30px;
+  font-size: 20px;
+  color: gray;
+  max-width: 1400px;
+  padding-left: 5%;
 }
-
-.block_otvet p {
-  padding-left: 5px;
-  font-size: 14px;
+h3{
+  color: #66cc33;
+  margin-bottom: 20px;
 }
 
 .wrapy {
