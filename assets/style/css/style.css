@@ -251,7 +251,7 @@ h1 {
   color: black;
   transition: 0.4s;
 } */
-.button {
+.button-product {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
@@ -265,7 +265,7 @@ h1 {
   transition: all 0.3 ease;
   cursor: pointer;
 }
-.button:hover,.form button:active,.form button:focus {
+.button-product:hover,.form button:active,.form button:focus {
   background: #43A047;
 }
 
