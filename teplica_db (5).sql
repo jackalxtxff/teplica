@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июн 02 2020 г., 16:16
+-- Время создания: Июн 05 2020 г., 13:25
 -- Версия сервера: 5.6.41
 -- Версия PHP: 5.5.38
 
@@ -49,7 +49,9 @@ CREATE TABLE `catalog_product` (
 INSERT INTO `catalog_product` (`id`, `vendor_code`, `product_name`, `description`, `image_path`, `product_type`, `product_size`, `material_type`, `product_price`, `discount_price`, `available`) VALUES
 (8, 1, 'Теплица 1', '1', 'assets/uploads/1590953528glavnaya.jpg', NULL, '1.00', '1', '1.00', '1.00', 1),
 (9, 2, 'Теплица 2', '2', 'assets/uploads/1590953572glavnaya.jpg', NULL, '2.00', '2', '2.00', '2.00', 1),
-(10, 3, 'Теплица 3', '3', 'assets/uploads/1590953579glavnaya.jpg', NULL, '3.00', '3', '3.00', '3.00', 1);
+(10, 3, 'Теплица 3', '3', 'assets/uploads/1590953579glavnaya.jpg', NULL, '3.00', '3', '3.00', '3.00', 0),
+(11, 2345, '2345', '2345', 'assets/uploads/1591132287atom_bYC0KWZn6h.jpg', NULL, '2345.00', '3245', '2345.00', '2345.00', 0),
+(12, 0, 'sdfgsfd', 'dsfg', 'assets/uploads/1591185187atom_bYC0KWZn6h.jpg', NULL, '0.00', 'sdfgsdf', '0.00', '0.00', 0);
 
 -- --------------------------------------------------------
 
@@ -76,8 +78,17 @@ CREATE TABLE `questions` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL COMMENT 'Имя',
   `email` varchar(100) NOT NULL COMMENT 'Почта',
+  `gender` varchar(10) NOT NULL COMMENT 'Пол',
   `message` varchar(1000) NOT NULL COMMENT 'Сообщение'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `questions`
+--
+
+INSERT INTO `questions` (`id`, `name`, `email`, `gender`, `message`) VALUES
+(1, 'dfghfdgh', '', 'man', 'gfhjgfhjfgh'),
+(2, 'dfghfdgh', 'gfhjfghj', 'man', 'gfhjgfhjfgh');
 
 -- --------------------------------------------------------
 
@@ -135,19 +146,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `catalog_product`
 --
 ALTER TABLE `catalog_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT для таблицы `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
