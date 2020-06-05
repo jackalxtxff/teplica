@@ -35,7 +35,7 @@
     ?>
     <div class="block_shop" product-id="<?= $row['id'] ?>">
       <div class="img-responsive">
-        <img src="<?= $row['image_path'] ?>">
+        <a href="/product?id=<?= $row['id'] ?>"><img src="<?= $row['image_path'] ?>"></a>
       </div>
       <hr>
       <h3 class="product_name"><?= $row['product_name'] ?></h3>
@@ -43,7 +43,7 @@
       <p class="description"><?= $row['description'] ?><p>
           <hr>
           <h5 class="product_price"><?= $row['product_price'] ?></h5>
-          <div class="container">
+          <div>
             <button class="button-product">ЗАКАЗАТЬ</button>
 
             </form>

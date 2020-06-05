@@ -51,7 +51,6 @@ nav {
   padding: 14px 18px;
   transition-property: all;
   transition-timing-function: ease-out;
-  transition-delay: 0.2s;
 }
 
 .topnav a:hover {
@@ -581,6 +580,24 @@ textarea {
   margin-left: 50px;
 }
 
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 90%;
+}
+
+@media only screen and (min-width: 601px) {
+  .container {
+    width: 85%;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .container {
+    width: 70%;
+  }
+}
+
 @media only screen and (max-width: 992px) {
   .modal {
     width: 80%;
@@ -664,6 +681,13 @@ textarea {
   }
 
 }
+
+@media only screen and (max-width: 1039px){
+  .contacts-adress {
+    margin-top: 70px;
+  }
+}
+
 @media only screen and (max-width: 640px){
 .contacts-form .btn {
   min-width: 120px;
@@ -719,6 +743,7 @@ justify-content: center;
 }
 
 .contacts-form input[type="text"],
+.contacts-form input[type="email"],
 .contacts-form textarea {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -735,13 +760,19 @@ justify-content: center;
 }
 
 .contacts-form input[type="text"]:hover,
+.contacts-form input[type="email"]:hover,
 .contacts-form textarea:hover {
   border: 2px solid #7f7f7f;
 }
 
 .contacts-form input[type="text"]:focus,
+.contacts-form input[type="email"]:focus,
 .contacts-form textarea:focus {
   border: 2px solid #00b770;
+}
+
+.is-invalid {
+  border: 2px solid #df4819 !important;
 }
 
 .contacts-form textarea {

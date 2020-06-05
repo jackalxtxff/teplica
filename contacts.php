@@ -12,14 +12,22 @@
                 <label for="fullname">ФИО:</label>
               </td>
               <td class="field">
-                <input type="text" id="fullname" name="fullname" placeholder="Представьтесь, пожалуйста">
+                <input type="text" name="fullname" placeholder="Представьтесь, пожалуйста">
+              </td>
+            </tr>
+						<tr>
+              <td class="title">
+                <label for="fullname">Эл.почта:</label>
+              </td>
+              <td class="field">
+                <input type="email" name="email" placeholder="Укажите электронную почту">
               </td>
             </tr>
             <tr>
               <td class="title">Пол:</td>
               <td class="field">
-                <label><input type="radio" id="man" name="sex" value="man" checked> Мужской</label>
-                <label><input type="radio" id="woman" name="sex" value="woman"> Женский</label>
+                <label><input type="radio" name="sex" value="man"> Мужской</label>
+                <label><input type="radio" name="sex" value="woman"> Женский</label>
               </td>
             </tr>
             <tr>
@@ -27,7 +35,7 @@
                 <label for="message">Доп.текст:</label>
               </td>
               <td class="field">
-                <textarea id="message" name="message" placeholder="Сообщите все, что считаете нужным"></textarea>
+                <textarea name="message" placeholder="Сообщите все, что считаете нужным"></textarea>
               </td>
             </tr>
             <tr>

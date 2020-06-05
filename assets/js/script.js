@@ -99,11 +99,13 @@ $('.message-button').click(function(e) {
     e.preventDefault();
 
     let fullname = $('input[name="fullname"]').val(),
+        email = $('input[name="email"]').val(),
         sex = $('input[name="sex"]').val(),
         message = $('textarea[name="message"]').val();
 
     let formData = new FormData();
     formData.append('fullname', fullname);
+    formData.append('email', email);
     formData.append('sex', sex);
     formData.append('message', message);
 
@@ -119,6 +121,13 @@ $('.message-button').click(function(e) {
             if (data.status) {
               alert('Сообщение отправлено');
             } else {
+              if (data.type === 1) {
+                  data.fields.forEach(function (field) {
+                      $(`input[name="${field}"]`).addClass('is-invalid');
+                      $(`textarea[name="${field}"]`).addClass('is-invalid');
+                  });
+              }
+
               alert(data.message);
             }
 

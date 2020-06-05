@@ -4,13 +4,18 @@
     $mysql -> set_charset("utf8");
 
     $fullname = $_POST['fullname'];
+    $email = $_POST['email'];
     $sex = $_POST['sex'];
     $message = $_POST['message'];
 
     $error_fields = [];
 
-    if ($fullaname === '') {
-        $error_fields[] = 'fullaname';
+    if ($fullname === '') {
+        $error_fields[] = 'fullname';
+    }
+
+    if ($email === '') {
+        $error_fields[] = 'email';
     }
 
     if ($sex === '') {
@@ -34,8 +39,8 @@
         die();
     } else {
 
-      mysqli_query($mysql, "INSERT INTO `questions` (`id`, `name`, `email`, `message`) VALUES
-      (NULL, '$fullname', '$sex', '$message')");
+      mysqli_query($mysql, "INSERT INTO `questions` (`id`, `name`, `email`, `gender`, `message`) VALUES
+      (NULL, '$fullname', '$email', '$sex', '$message')");
 
       $response = [
           "status" => true,
