@@ -23,7 +23,7 @@
           <?= $product['product_name'] ?>
         </div>
         <div class="vendor_code">
-          Артикул: <?= $product['vendor_code'] ?>
+          Артикул: <?= $product['id'] ?>
         </div>
         <div class="product_price">
           <?= $product['product_price'] ?> руб
@@ -44,7 +44,7 @@
               <p class="title">Тип материала:</p> <?= $product['material_type'] ?>
             </div>
             <div class="product_size">
-              <p class="title">Размеры:</p> <?= $product['product_size'] ?>
+              <p class="title">Размеры:</p> ширина <?= $product['width'] ?> м, высота <?= $product['height'] ?> м, длина <?= $product['length'] ?> м
             </div>
           </div>
         </div>

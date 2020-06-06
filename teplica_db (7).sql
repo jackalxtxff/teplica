@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июн 06 2020 г., 18:35
+-- Время создания: Июн 07 2020 г., 00:43
 -- Версия сервера: 5.6.41
 -- Версия PHP: 5.5.38
 
@@ -30,28 +30,33 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `catalog_product` (
   `id` int(11) NOT NULL COMMENT 'id',
-  `vendor_code` int(255) DEFAULT NULL COMMENT 'Артикул',
   `product_name` varchar(255) DEFAULT NULL COMMENT 'Название товара',
   `description` varchar(1000) DEFAULT NULL COMMENT 'Описание товара',
   `image_path` varchar(255) DEFAULT NULL COMMENT 'Путь к фото товара',
-  `product_type` varchar(255) DEFAULT NULL COMMENT 'Тип товара',
-  `product_size` decimal(10,2) DEFAULT NULL COMMENT 'Размер товара',
   `material_type` varchar(255) DEFAULT NULL COMMENT 'Тип материала',
   `product_price` decimal(10,2) DEFAULT NULL COMMENT 'Цена',
   `discount_price` decimal(10,2) DEFAULT NULL COMMENT 'Цена со скидкой',
-  `available` int(1) DEFAULT NULL COMMENT 'Удаление'
+  `available` int(1) DEFAULT NULL COMMENT 'Удаление',
+  `height` int(2) DEFAULT NULL COMMENT 'Высота',
+  `width` int(2) DEFAULT NULL COMMENT 'Ширина',
+  `length` int(2) DEFAULT NULL COMMENT 'Длина',
+  `arcs` varchar(255) DEFAULT NULL COMMENT 'Дуги',
+  `base` varchar(255) DEFAULT NULL COMMENT 'Основание',
+  `durability` varchar(255) DEFAULT NULL COMMENT 'Прочность'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `catalog_product`
 --
 
-INSERT INTO `catalog_product` (`id`, `vendor_code`, `product_name`, `description`, `image_path`, `product_type`, `product_size`, `material_type`, `product_price`, `discount_price`, `available`) VALUES
-(8, 1, 'Теплица 1', '1', 'assets/uploads/1590953528glavnaya.jpg', NULL, '1.00', '1', '1.00', '1.00', 1),
-(9, 2, 'Теплица 2', '2', 'assets/uploads/1590953572glavnaya.jpg', NULL, '2.00', '2', '2.00', '2.00', 1),
-(10, 3, 'Теплица 3', '3', 'assets/uploads/1590953579glavnaya.jpg', NULL, '3.00', '3', '3.00', '3.00', 0),
-(11, 2345, '2345', '2345', 'assets/uploads/1591132287atom_bYC0KWZn6h.jpg', NULL, '2345.00', '3245', '2345.00', '2345.00', 0),
-(12, 0, 'sdfgsfd', 'dsfg', 'assets/uploads/1591185187atom_bYC0KWZn6h.jpg', NULL, '0.00', 'sdfgsdf', '0.00', '0.00', 0);
+INSERT INTO `catalog_product` (`id`, `product_name`, `description`, `image_path`, `material_type`, `product_price`, `discount_price`, `available`, `height`, `width`, `length`, `arcs`, `base`, `durability`) VALUES
+(8, 'Теплица 1', '1', 'assets/uploads/1590953528glavnaya.jpg', '1', '1.00', '1.00', 0, 0, 0, 0, '', '', ''),
+(9, 'Теплица 2', '2', 'assets/uploads/1590953572glavnaya.jpg', '2', '2.00', '2.00', 0, 0, 0, 0, '', '', ''),
+(10, 'Теплица 3', '3', 'assets/uploads/1590953579glavnaya.jpg', '3', '3.00', '3.00', 0, 0, 0, 0, '', '', ''),
+(16, 'Теплица \"Капелька\"', 'Теплица в виде капельки. Подойдет для вас и вашей семьи', 'assets/uploads/1591474452glavnaya.jpg', '1', '12000.00', '0.00', 1, 0, 0, 0, '', '', ''),
+(17, 'Сверхпрочная теплица \"Капелька\"', 'Такая же как и обычная капелька только прочнее и стоит на 10к дороже', 'assets/uploads/1591474474glavnaya.jpg', '1', '22000.00', '0.00', 1, 0, 0, 0, '', '', ''),
+(18, 'Теплица \"Народная\"', 'Теплица от народа для народа', 'assets/uploads/1591474641glavnaya.jpg', '1', '15499.00', '0.00', 1, 0, 0, 0, '', '', ''),
+(19, 'jhgj', 'ghj', 'assets/uploads/1591477731glavnaya.jpg', 'fghj', '0.00', '0.00', 0, 0, 0, 0, 'fghj', 'fghj', 'fghj');
 
 -- --------------------------------------------------------
 
@@ -146,7 +151,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `catalog_product`
 --
 ALTER TABLE `catalog_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT для таблицы `orders`
