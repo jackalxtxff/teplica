@@ -36,8 +36,8 @@ $("#auth-button").click(function(event) {
 });
 
 $(document).ready(function() {
-    $('input#input_text, textarea#textarea2').characterCounter();
-  });
+  $('input#input_text, textarea#textarea2').characterCounter();
+});
 
 
 
@@ -326,69 +326,69 @@ $('.logout').click(function() {
 
 var image_path = false;
 
-$('input[name="image_path"]').change(function (e) {
-    image_path = e.target.files[0];
+$('input[name="image_path"]').change(function(e) {
+  image_path = e.target.files[0];
 });
 
 
-$('.access-button').click(function (e) {
-    e.preventDefault();
+$('.access-button').click(function(e) {
+  e.preventDefault();
 
-    let product_name = $('input[name="product_name"]').val(),
-        vendor_code = $('input[name="vendor_code"]').val(),
-        product_size = $('input[name="product_size"]').val(),
-        material_type = $('input[name="material_type"]').val(),
-        product_price = $('input[name="product_price"]').val();
-        discount_price = $('input[name="discount_price"]').val();
-        description = $('textarea[name="description"]').val();
+  let product_name = $('input[name="product_name"]').val(),
+    vendor_code = $('input[name="vendor_code"]').val(),
+    product_size = $('input[name="product_size"]').val(),
+    material_type = $('input[name="material_type"]').val(),
+    product_price = $('input[name="product_price"]').val();
+  discount_price = $('input[name="discount_price"]').val();
+  description = $('textarea[name="description"]').val();
 
-    let formData = new FormData();
-    formData.append('product_name', product_name);
-    formData.append('vendor_code', vendor_code);
-    formData.append('product_size', product_size);
-    formData.append('material_type', material_type);
-    formData.append('product_price', product_price);
-    formData.append('discount_price', discount_price);
-    formData.append('description', description);
-    formData.append('image_path', image_path);
+  let formData = new FormData();
+  formData.append('product_name', product_name);
+  formData.append('vendor_code', vendor_code);
+  formData.append('product_size', product_size);
+  formData.append('material_type', material_type);
+  formData.append('product_price', product_price);
+  formData.append('discount_price', discount_price);
+  formData.append('description', description);
+  formData.append('image_path', image_path);
 
 
-    $.ajax({
-        url: 'php/addProducts.php',
-        type: 'POST',
-        dataType: 'json',
-        processData: false,
-        contentType: false,
-        cache: false,
-        data: formData,
-        success (data) {
+  $.ajax({
+    url: 'php/addProducts.php',
+    type: 'POST',
+    dataType: 'json',
+    processData: false,
+    contentType: false,
+    cache: false,
+    data: formData,
+    success(data) {
 
-            if (data.status) {
-              let toastHTML = '<span>Данные добавлены</span>';
-              M.toast({
-                html: toastHTML
-              });
-            } else if (data.type == 3) {
-              let toastHTML = '<span>Товар с таким артикулом существует</span>';
-              M.toast({
-                html: toastHTML
-              });
-            } else {
+      if (data.status) {
+        let toastHTML = '<span>Данные добавлены</span>';
+        M.toast({
+          html: toastHTML
+        });
+      } else if (data.type == 3) {
+        let toastHTML = '<span>Товар с таким артикулом существует</span>';
+        M.toast({
+          html: toastHTML
+        });
+      } else {
 
-              let toastHTML = '<span>Непредвиденная ошибка</span>';
-              M.toast({
-                html: toastHTML
-              });
+        let toastHTML = '<span>Непредвиденная ошибка</span>';
+        M.toast({
+          html: toastHTML
+        });
 
-            }
+      }
 
-        }
-    });
+    }
+  });
 
 });
 
 
-$('.delete').click(function(e) {
+$('.action-btn').click(function(e) {
   let elem = e.currentTarget;
 
   let product_id = $(elem).parents('tr').find('.id').text();
@@ -406,7 +406,7 @@ $('.delete').click(function(e) {
     data: formData,
     success(data) {
       if (data.status) {
-        let toastHTML = '<span>Товар удален</span>';
+        let toastHTML = '<span>' + data.message + '</span>';
         M.toast({
           html: toastHTML
         });

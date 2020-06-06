@@ -10,6 +10,7 @@
             <thead>
               <tr>
                 <th>#</th>
+                <th>Статус</th>
                 <th>Артикул</th>
                 <th>Название товара</th>
                 <th>Описание</th>
@@ -26,12 +27,13 @@
               <?php
                 require_once 'php/connection.php';
                 $mysql -> set_charset("utf8");
-                $query = mysqli_query($mysql, "SELECT * FROM `catalog_product` WHERE `available` = 1");
+                $query = mysqli_query($mysql, "SELECT * FROM `catalog_product`");
                 while($row = mysqli_fetch_assoc($query)) {
               ?>
 
               <tr>
                 <td class="id"><?= $row['id'] ?></td>
+                <td class="available"><?php if ($row['available'] == 1) {echo "Виден";} else {echo "Скрыт";} ?></td>
                 <td class="vendor_code">
                   <span class="bd-text"><?= $row['vendor_code'] ?></span>
                   <div class="edit-box" style="display: none">
@@ -153,14 +155,12 @@
                   </div>
                 </td>
                 <td class="image_path"><?= $row['image_path'] ?></td>
-                <td class="image_path">
+                <td class="action">
                   <!-- Dropdown Trigger -->
-                  <a class='dropdown-trigger btn' href='#' data-target='dropdown2'>Drop Me!</a>
+                  <a class="waves-effect waves-light btn action-btn"><?php if ($row['available'] == 1) {echo "Скрыть";} else {echo "Показать";} ?></a>
 
                   <!-- Dropdown Structure -->
-                  <ul id='dropdown2' class='dropdown-content'>
-                    <li><a class="delete" href="#">Удалить</a></li>
-                  </ul>
+
                 </td>
               </tr>
 
