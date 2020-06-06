@@ -5,7 +5,7 @@
 		<div class="img_center">
 			<img src="assets/img/glavnaya.jpg"  alt="" class="mw-100">
 		</div>
-	<div class="center">
+	<div class="text-title">
 		<p>Разочарование  от  низкого качества <p>
 		<p>длится  намного  дольше, чем</p>
 		<p>радость  от  низкой  цены!</p>

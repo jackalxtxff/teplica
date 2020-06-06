@@ -56,9 +56,9 @@
   </div>
   <div class="modal">
     <div class="modal-content">
-      <div class="product">
-        <img src="assets/img/glavnaya.jpg" class="img-responsive">
-        <div class="product_elem">
+      <div class="product row">
+        <img src="assets/img/glavnaya.jpg" class="img-responsive col s12 m6">
+        <div class="product_elem col s12 m6">
           <h4 class="product_name">Имя</h4>
           <p class="product_price">Цена</p>
           <p class="description">Описание</p>
