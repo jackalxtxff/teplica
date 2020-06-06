@@ -2,7 +2,7 @@
 
 <main class="transition-fade" id="swup">
 	<section class="contacts">
-  <h2 class="contacts-title">Обратная связь</h2>
+  <h1 class="contacts-title">Обратная связь</h1>
       <div class="container4">
 
         <form class="contacts-form" method="post">
