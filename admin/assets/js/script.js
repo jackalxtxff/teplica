@@ -335,20 +335,28 @@ $('.access-button').click(function(e) {
   e.preventDefault();
 
   let product_name = $('input[name="product_name"]').val(),
-    vendor_code = $('input[name="vendor_code"]').val(),
-    product_size = $('input[name="product_size"]').val(),
-    material_type = $('input[name="material_type"]').val(),
-    product_price = $('input[name="product_price"]').val();
-  discount_price = $('input[name="discount_price"]').val();
-  description = $('textarea[name="description"]').val();
+      material_type = $('input[name="material_type"]').val(),
+      product_price = $('input[name="product_price"]').val(),
+      discount_price = $('input[name="discount_price"]').val(),
+      width = $('input[name="width"]').val(),
+      height = $('input[name="height"]').val(),
+      length = $('input[name="length"]').val(),
+      arcs = $('input[name="arcs"]').val(),
+      base = $('input[name="base"]').val(),
+      durability = $('input[name="durability"]').val(),
+      description = $('textarea[name="description"]').val();
 
   let formData = new FormData();
   formData.append('product_name', product_name);
-  formData.append('vendor_code', vendor_code);
-  formData.append('product_size', product_size);
   formData.append('material_type', material_type);
   formData.append('product_price', product_price);
   formData.append('discount_price', discount_price);
+  formData.append('width', width);
+  formData.append('height', height);
+  formData.append('length', length);
+  formData.append('arcs', arcs);
+  formData.append('base', base);
+  formData.append('durability', durability);
   formData.append('description', description);
   formData.append('image_path', image_path);
 

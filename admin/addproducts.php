@@ -13,13 +13,25 @@
                   <input type="text" class="validate" name="product_name" placeholder="Название товара">
                 </div>
                 <div class="col s12 m6">
-                  <input type="text" class="validate" name="vendor_code" placeholder="Артикул">
-                </div>
-                <div class="col s12 m6">
-                  <input type="text" class="validate" name="product_size" placeholder="Размер товара">
-                </div>
-                <div class="col s12 m6">
                   <input type="text" class="validate" name="material_type" placeholder="Тип материала">
+                </div>
+                <div class="col s12 m6">
+                  <input type="text" class="validate" name="width" placeholder="Ширина">
+                </div>
+                <div class="col s12 m6">
+                  <input type="text" class="validate" name="height" placeholder="Высота">
+                </div>
+                <div class="col s12 m6">
+                  <input type="text" class="validate" name="length" placeholder="Длина">
+                </div>
+                <div class="col s12 m6">
+                  <input type="text" class="validate" name="arcs" placeholder="Дуги">
+                </div>
+                <div class="col s12 m6">
+                  <input type="text" class="validate" name="base" placeholder="Основание">
+                </div>
+                <div class="col s12 m6">
+                  <input type="text" class="validate" name="durability" placeholder="Прочность">
                 </div>
                 <div class="col s12 m6">
                   <input type="text" class="validate" name="product_price" placeholder="Цена">
