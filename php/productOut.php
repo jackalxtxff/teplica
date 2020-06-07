@@ -32,15 +32,18 @@
 
         $product_list = [
           "id" => $product['id'],
-          "vendor_code" => $product['vendor_code'],
           "product_name" => $product['product_name'],
           "description" => $product['description'],
           "image_path" => $product['image_path'],
-          "product_type" => $product['product_type'],
-          "product_size" => $product['product_size'],
           "material_type" => $product['material_type'],
           "product_price" => $product['product_price'],
-          "discount_price" => $product['discount_price']
+          "discount_price" => $product['discount_price'],
+          "height" => $product['height'],
+          "width" => $product['width'],
+          "length" => $product['length'],
+          "arcs" => $product['arcs'],
+          "base" => $product['base'],
+          "durability" => $product['durability']
         ];
 
         $response = [
