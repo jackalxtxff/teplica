@@ -2,55 +2,42 @@
 
 <main class="transition-fade" id="swup">
   <h1>Каталог</h1>
-  <div class="wrapper">
-    <!-- <div class="block_shop">
-      <div class="img-responsive">
-        <img src="assets/img/glavnaya.jpg">
-      </div>
-      <hr>
-      <h3>Название</h3>
-      <hr>
-      <p>Описание<p>
-          <hr>
-          <h5>Цена</h5>
-          <div class="hidden">
-            <input type="checkbox" id="modal">
-            <label for="modal" class="button">ЗАКАЗАТЬ</label>
-
-            <form class="modal_content" id="form" name="form">
-              <input type="text" class="form-field" name="name" placeholder="ФИО">
-              <input type="text" class="form-field" name="email" placeholder="Почта">
-              <input type="text" class="form-field" name="phone" placeholder="Номер телефона">
-              <input type="text" class="form-field" name="adres" placeholder="Адрес">
-              <button class="button-form"><span class="text-button">Отправить заявку</span></button>
-            </form>
+  <div class="container">
+    <div class="catalog_wrapper row">
+      <?php
+        require_once 'php/connection.php';
+        $mysql -> set_charset("utf8");
+        $query = mysqli_query($mysql, "SELECT * FROM `catalog_product` WHERE `available` = 1");
+        while($row = mysqli_fetch_assoc($query)) {
+      ?>
+      <div class="product-item col s12 m4 l3" product-id="<?= $row['id'] ?>">
+        <div class="product-item_hover" style="display: none;">
+          <div class="row center">
+            <a href="/product?id=<?= $row['id'] ?>"><div class="view-btn col s12">Просмотр</div></a>
+            <div class="buy-btn modal-buy-trigger col s12">Заказать</div>
           </div>
-
-    </div> -->
-    <?php
-      require_once 'php/connection.php';
-      $mysql -> set_charset("utf8");
-      $query = mysqli_query($mysql, "SELECT * FROM `catalog_product` WHERE `available` = 1");
-      while($row = mysqli_fetch_assoc($query)) {
-    ?>
-    <div class="block_shop" product-id="<?= $row['id'] ?>">
-      <div class="img-responsive">
-        <a href="/product?id=<?= $row['id'] ?>"><img src="<?= $row['image_path'] ?>"></a>
-      </div>
-      <hr>
-      <h3 class="product_name"><?= $row['product_name'] ?></h3>
-      <hr>
-      <p class="description"><?= $row['description'] ?><p>
-          <hr>
-          <h5 class="product_price"><?= $row['product_price'] ?></h5>
-          <div>
-            <button class="button-product">ЗАКАЗАТЬ</button>
-
-            </form>
-
+        </div>
+        <div class="item-content">
+          <div class="product-item_image">
+            <a href="/product?id=<?= $row['id'] ?>"><img src="<?= $row['image_path'] ?>" class="img-responsive"></a>
           </div>
-    </div>
-  <?php } ?>
+          <div class="product-item_name">
+            <h3><?= $row['product_name'] ?></h3>
+          </div>
+          <div class="product-item_price">
+            <h5>Цена: <?= $row['product_price'] ?> руб</h5>
+          </div>
+          <div class="product-item_description">
+            <p class="product-item_size">Размеры: ширина <?= $row['width'] ?> м, высота <?= $row['height'] ?> м, длина <?= $row['length'] ?> м</p>
+            <p class="description"><?= $row['description'] ?><p>
+          </div>
+          <div class="product-time_btn">
+            <button class="button-product modal-buy-trigger">ЗАКАЗАТЬ</button>
+          </div>
+        </div>
+      </div>
+    <?php } ?>
+  </div>
 
 
   </div>
@@ -61,6 +48,11 @@
         <div class="product_elem col s12 m6">
           <h4 class="product_name">Имя</h4>
           <p class="product_price">Цена</p>
+          <p class="size">Размеры</p>
+          <p class="material_type">Материал</p>
+          <p class="arcs">Дуги</p>
+          <p class="base">Основание</p>
+          <p class="durability">Прочность</p>
           <p class="description">Описание</p>
         </div>
       </div>

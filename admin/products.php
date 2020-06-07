@@ -11,12 +11,15 @@
               <tr>
                 <th>#</th>
                 <th>Статус</th>
-                <th>Артикул</th>
                 <th>Название товара</th>
                 <th>Описание</th>
-                <th>Тип</th>
-                <th>Размер</th>
                 <th>Материал</th>
+                <th>Ширина</th>
+                <th>Высота</th>
+                <th>Длина</th>
+                <th>Дуги</th>
+                <th>Основание</th>
+                <th>Прочность</th>
                 <th>Цена</th>
                 <th>Скидка</th>
                 <th>Изображение</th>
@@ -34,21 +37,6 @@
               <tr>
                 <td class="id"><?= $row['id'] ?></td>
                 <td class="available"><?php if ($row['available'] == 1) {echo "Виден";} else {echo "Скрыт";} ?></td>
-                <td class="vendor_code">
-                  <span class="bd-text"><?= $row['vendor_code'] ?></span>
-                  <div class="edit-box" style="display: none">
-                    <div class="edit-box__title">
-                      <p><?= $row['product_name'] ?></p>
-                    </div>
-                    <div class="edit-box__content input-field">
-                      <input type="text" name="change-value" value="">
-                    </div>
-                    <div class="edit-box__footer">
-                      <a href="#" class="close btn wafes-effect">Отменить</a>
-                      <a href="#" class="save btn wafes-effect">Сохранить</a>
-                    </div>
-                  </div>
-                </td>
                 <td class="product_name">
                   <span class="bd-text"><?= $row['product_name'] ?></span>
                   <div class="edit-box" style="display: none">
@@ -79,38 +67,98 @@
                     </div>
                   </div>
                 </td>
-                <td class="product_type">
-                  <span class="bd-text"><?= $row['product_type'] ?></span>
-                  <div class="edit-box" style="display: none">
-                    <div class="edit-box__title">
-                      <p><?= $row['product_name'] ?></p>
-                    </div>
-                    <div class="edit-box__content input-field">
-                      <input type="text" name="change-value" value="">
-                    </div>
-                    <div class="edit-box__footer">
-                      <a href="#" class="close btn wafes-effect">Отменить</a>
-                      <a href="#" class="save btn wafes-effect">Сохранить</a>
-                    </div>
-                  </div>
-                </td>
-                <td class="product_size">
-                  <span class="bd-text"><?= $row['product_size'] ?></span>
-                  <div class="edit-box" style="display: none">
-                    <div class="edit-box__title">
-                      <p><?= $row['product_name'] ?></p>
-                    </div>
-                    <div class="edit-box__content input-field">
-                      <input type="text" name="change-value" value="">
-                    </div>
-                    <div class="edit-box__footer">
-                      <a href="#" class="close btn wafes-effect">Отменить</a>
-                      <a href="#" class="save btn wafes-effect">Сохранить</a>
-                    </div>
-                  </div>
-                </td>
                 <td class="material_type">
                   <span class="bd-text"><?= $row['material_type'] ?></span>
+                  <div class="edit-box" style="display: none">
+                    <div class="edit-box__title">
+                      <p><?= $row['product_name'] ?></p>
+                    </div>
+                    <div class="edit-box__content input-field">
+                      <input type="text" name="change-value" value="">
+                    </div>
+                    <div class="edit-box__footer">
+                      <a href="#" class="close btn wafes-effect">Отменить</a>
+                      <a href="#" class="save btn wafes-effect">Сохранить</a>
+                    </div>
+                  </div>
+                </td>
+                <td class="width">
+                  <span class="bd-text"><?= $row['width'] ?></span>
+                  <div class="edit-box" style="display: none">
+                    <div class="edit-box__title">
+                      <p><?= $row['product_name'] ?></p>
+                    </div>
+                    <div class="edit-box__content input-field">
+                      <input type="text" name="change-value" value="">
+                    </div>
+                    <div class="edit-box__footer">
+                      <a href="#" class="close btn wafes-effect">Отменить</a>
+                      <a href="#" class="save btn wafes-effect">Сохранить</a>
+                    </div>
+                  </div>
+                </td>
+                <td class="height">
+                  <span class="bd-text"><?= $row['height'] ?></span>
+                  <div class="edit-box" style="display: none">
+                    <div class="edit-box__title">
+                      <p><?= $row['product_name'] ?></p>
+                    </div>
+                    <div class="edit-box__content input-field">
+                      <input type="text" name="change-value" value="">
+                    </div>
+                    <div class="edit-box__footer">
+                      <a href="#" class="close btn wafes-effect">Отменить</a>
+                      <a href="#" class="save btn wafes-effect">Сохранить</a>
+                    </div>
+                  </div>
+                </td>
+                <td class="length">
+                  <span class="bd-text"><?= $row['length'] ?></span>
+                  <div class="edit-box" style="display: none">
+                    <div class="edit-box__title">
+                      <p><?= $row['product_name'] ?></p>
+                    </div>
+                    <div class="edit-box__content input-field">
+                      <input type="text" name="change-value" value="">
+                    </div>
+                    <div class="edit-box__footer">
+                      <a href="#" class="close btn wafes-effect">Отменить</a>
+                      <a href="#" class="save btn wafes-effect">Сохранить</a>
+                    </div>
+                  </div>
+                </td>
+                <td class="arcs">
+                  <span class="bd-text"><?= $row['arcs'] ?></span>
+                  <div class="edit-box" style="display: none">
+                    <div class="edit-box__title">
+                      <p><?= $row['product_name'] ?></p>
+                    </div>
+                    <div class="edit-box__content input-field">
+                      <input type="text" name="change-value" value="">
+                    </div>
+                    <div class="edit-box__footer">
+                      <a href="#" class="close btn wafes-effect">Отменить</a>
+                      <a href="#" class="save btn wafes-effect">Сохранить</a>
+                    </div>
+                  </div>
+                </td>
+                <td class="base">
+                  <span class="bd-text"><?= $row['base'] ?></span>
+                  <div class="edit-box" style="display: none">
+                    <div class="edit-box__title">
+                      <p><?= $row['product_name'] ?></p>
+                    </div>
+                    <div class="edit-box__content input-field">
+                      <input type="text" name="change-value" value="">
+                    </div>
+                    <div class="edit-box__footer">
+                      <a href="#" class="close btn wafes-effect">Отменить</a>
+                      <a href="#" class="save btn wafes-effect">Сохранить</a>
+                    </div>
+                  </div>
+                </td>
+                <td class="durability">
+                  <span class="bd-text"><?= $row['durability'] ?></span>
                   <div class="edit-box" style="display: none">
                     <div class="edit-box__title">
                       <p><?= $row['product_name'] ?></p>

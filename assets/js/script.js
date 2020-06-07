@@ -34,7 +34,7 @@ $('.sidenav-overlay').click(function() {
 
 
 $(document).ready(function() {
-  $('.button-product').click(function(e) {
+  $('.modal-buy-trigger').click(function(e) {
     let clickButton = e.currentTarget;
     let styles = {
       "z-index": "1003",
@@ -64,10 +64,10 @@ $(document).ready(function() {
 });
 
 
-$('.button-product').click(function(e) {
+$('.modal-buy-trigger').click(function(e) {
     let elem = e.currentTarget;
 
-    let product_id = $(elem).parents('.block_shop').attr('product-id');
+    let product_id = $(elem).parents('.product-item').attr('product-id');
 
     let formData = new FormData();
     formData.append('product-id', product_id);
@@ -84,7 +84,12 @@ $('.button-product').click(function(e) {
             if (data.status) {
               $(".modal .product_name").text(data.product.product_name);
               $(".modal .product_price").text(data.product.product_price);
-              $(".modal .description").text(data.product.description);
+              $(".modal .size").text("Размеры: ширина " + data.product.width + " м, " + "высота " + data.product.height + " м, " + "длина " + data.product.height + " м. ");
+              $(".modal .arcs").text("Дуги: " + data.product.arcs);
+              $(".modal .base").text("Основание: " + data.product.base);
+              $(".modal .durability").text("Прочность: " + data.product.durability);
+              $(".modal .material_type").text("Материал: " + data.product.material_type);
+              $(".modal .description").text("Описание: " + data.product.description);
               $(".modal .order-button").attr("product_id", data.product.id);
             } else {
               alert(data.message);
@@ -171,3 +176,18 @@ $('.order-button').click(function(e) {
     });
 
 });
+
+
+$(window).on('load resize', function() {
+      if ($(window).width() >= '601'){
+        $('.product-item').hover(function(e){
+          let elem = e.currentTarget;
+          // $(itemProductHover).find('.item-content').css('filter','blur(5px)');
+          $(elem).find('.product-item_hover').fadeIn('fast');
+        }, function(e) {
+          let elem = e.currentTarget;
+          // $(itemProductHover).find('.item-content').attr('style', '');
+          $(elem).find('.product-item_hover').fadeOut('fast');
+        })
+      }
+  });

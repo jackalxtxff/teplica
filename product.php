@@ -29,7 +29,7 @@
           <?= $product['product_price'] ?> руб
         </div>
         <div class="row">
-          <button class="button-product col s12 m8">ЗАКАЗАТЬ</button>
+          <button class="button-product modal-buy-trigger col s12 m8">ЗАКАЗАТЬ</button>
         </div>
 
       </div>
@@ -43,14 +43,38 @@
             <div class="material_type">
               <p class="title">Тип материала:</p> <?= $product['material_type'] ?>
             </div>
-            <div class="product_size">
-              <p class="title">Размеры:</p> ширина <?= $product['width'] ?> м, высота <?= $product['height'] ?> м, длина <?= $product['length'] ?> м
+            <div class="product_arcs">
+              <p class="title">Дуги:</p> <?= $product['arcs'] ?>
+            </div>
+            <div class="product_base">
+              <p class="title">Основание:</p> <?= $product['base'] ?>
+            </div>
+            <div class="product_durability">
+              <p class="title">Прочность:</p> <?= $product['durability'] ?>
             </div>
           </div>
         </div>
       </div>
     </section>
   </div>
+  <div class="modal">
+    <div class="modal-content">
+      <div class="feedback">
+        <form action="">
+          <h4 style="display: inline-block;">Оставьте свои контакты, чтобы мы связались с вами</h4>
+          <input type="text" class="form-field" name="name" placeholder="ФИО">
+          <input type="text" class="form-field" name="email" placeholder="Почта">
+          <input type="text" class="form-field" name="phone" placeholder="Номер телефона">
+          <input type="text" class="form-field" name="adres" placeholder="Адрес">
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close btn-flat order-button" product_id="">Заказать</a>
+      <a href="#!" class="modal-close btn-flat">Отменить</a>
+    </div>
+  </div>
+  <div class="modal-overlay"></div>
 </main>
 
 <?php require_once 'layouts/footer.php' ?>
