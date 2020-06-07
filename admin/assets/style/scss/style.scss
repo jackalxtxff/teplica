@@ -265,12 +265,12 @@ tr {
 .edit-box {
   text-align: left;
   width: 320px;
-  height: 180px;
-  position: fixed;
+  height: auto;
+  position: absolute;
   background: #dddddd;
   margin-top: -14px;
   z-index: 99;
-  padding: 0 10px 0 10px;
+  padding: 0 10px 10px 10px;
 
   &__title {
     p {

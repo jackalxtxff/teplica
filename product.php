@@ -70,7 +70,7 @@
       </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close btn-flat order-button" product_id="">Заказать</a>
+      <a href="#!" class="modal-close btn-flat order-button" product_id="<?= $product['id'] ?>">Заказать</a>
       <a href="#!" class="modal-close btn-flat">Отменить</a>
     </div>
   </div>

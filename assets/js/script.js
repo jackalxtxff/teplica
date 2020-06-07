@@ -67,7 +67,10 @@ $(document).ready(function() {
 $('.modal-buy-trigger').click(function(e) {
     let elem = e.currentTarget;
 
-    let product_id = $(elem).parents('.product-item').attr('product-id');
+    let product_id = $('.order-button').attr('product_id');
+    if (product_id == "") {
+      product_id = $(elem).parents('.product-item').attr('product-id');
+    }
 
     let formData = new FormData();
     formData.append('product-id', product_id);
@@ -147,7 +150,7 @@ $('.order-button').click(function(e) {
     let fullname = $('input[name="name"]').val(),
         email = $('input[name="email"]').val(),
         number = $('input[name="phone"]').val(),
-        adres = $('input[name="adres"]').val();
+        adres = $('input[name="adres"]').val(),
         product_id = $('.order-button').attr('product_id');
 
     let formData = new FormData();

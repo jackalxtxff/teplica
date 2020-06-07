@@ -263,6 +263,7 @@ h1 {
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
+  margin: 10px 0 10px 0;
 }
 .button-product:hover,.form button:active,.form button:focus {
   background: #43A047;
