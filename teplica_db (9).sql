@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июн 07 2020 г., 03:02
+-- Время создания: Июн 08 2020 г., 08:25
 -- Версия сервера: 5.6.41
 -- Версия PHP: 5.5.38
 
@@ -50,13 +50,9 @@ CREATE TABLE `catalog_product` (
 --
 
 INSERT INTO `catalog_product` (`id`, `product_name`, `description`, `image_path`, `material_type`, `product_price`, `discount_price`, `available`, `height`, `width`, `length`, `arcs`, `base`, `durability`) VALUES
-(8, 'Теплица 1', '1', 'assets/uploads/1590953528glavnaya.jpg', '1', '1.00', '1.00', 0, 0, 0, 0, '', '', ''),
-(9, 'Теплица 2', '2', 'assets/uploads/1590953572glavnaya.jpg', '2', '2.00', '2.00', 0, 0, 0, 0, '', '', ''),
-(10, 'Теплица 3', '3', 'assets/uploads/1590953579glavnaya.jpg', '3', '3.00', '3.00', 0, 0, 0, 0, '', '', ''),
 (16, 'Теплица \"Капелька\"', 'Теплица в виде капельки. Подойдет для вас и вашей семьи', 'assets/uploads/1591474452glavnaya.jpg', 'Поликарбонат', '12000.00', '0.00', 1, 2, 3, 5, 'профильная труба 25*25мм толщина стенки 1,2мм', 'профильная труба 25*25 мм', 'Высокая'),
 (17, 'Сверхпрочная теплица \"Капелька\"', 'Такая же как и обычная капелька только прочнее и стоит на 10к дороже', 'assets/uploads/1591474474glavnaya.jpg', 'Поликарбонат', '22000.00', '0.00', 1, 3, 3, 6, 'профильная труба 40*20мм толщина стенки 1,2мм', 'профильная труба 40*20 мм', 'Максимальная'),
-(18, 'Теплица \"Народная\"', 'Теплица от народа для народа', 'assets/uploads/1591474641glavnaya.jpg', 'Поликарбонат', '15499.00', '0.00', 1, 2, 4, 6, 'профильная труба 20*20мм толщина стенки 1,2мм', 'профильная труба 40*20 мм', 'Высокая'),
-(19, 'jhgj', 'ghj', 'assets/uploads/1591477731glavnaya.jpg', 'fghj', '0.00', '0.00', 0, 0, 0, 0, 'fghj', 'fghj', 'fghj');
+(18, 'Теплица \"Народная\"', 'Теплица от народа для народа', 'assets/uploads/1591474641glavnaya.jpg', 'Поликарбонат', '15499.00', '0.00', 1, 2, 4, 6, 'профильная труба 20*20мм толщина стенки 1,2мм', 'профильная труба 40*20 мм', 'Высокая');
 
 -- --------------------------------------------------------
 
@@ -86,14 +82,6 @@ CREATE TABLE `questions` (
   `gender` varchar(10) NOT NULL COMMENT 'Пол',
   `message` varchar(1000) NOT NULL COMMENT 'Сообщение'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `questions`
---
-
-INSERT INTO `questions` (`id`, `name`, `email`, `gender`, `message`) VALUES
-(1, 'dfghfdgh', '', 'man', 'gfhjgfhjfgh'),
-(2, 'dfghfdgh', 'gfhjfghj', 'man', 'gfhjgfhjfgh');
 
 -- --------------------------------------------------------
 
@@ -151,7 +139,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `catalog_product`
 --
 ALTER TABLE `catalog_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT для таблицы `orders`
@@ -163,7 +151,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT для таблицы `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
