@@ -1,5 +1,4 @@
 <?php
-    require_once 'deburger.php';
     require_once 'connection.php';
 
     $mysql -> set_charset("utf8");
@@ -23,39 +22,39 @@
         $error_fields[] = 'product_name';
     }
 
-    if ($material_type === '') {
+    if ($material_type === '' || $arcs === 'null') {
         $error_fields[] = 'material_type';
     }
 
-    if ($product_price === '') {
+    if ($product_price === '' || !is_numeric($product_price)) {
         $error_fields[] = 'product_price';
     }
 
-    if ($discount_price === '') {
+    if ($discount_price === '' || !is_numeric($discount_price)) {
         $error_fields[] = 'discount_price';
     }
 
-    if ($width === '') {
+    if ($width === '' || !is_numeric($width)) {
         $error_fields[] = 'width';
     }
 
-    if ($height === '') {
+    if ($height === '' || !is_numeric($height)) {
         $error_fields[] = 'height';
     }
 
-    if ($length === '') {
+    if ($length === '' || !is_numeric($length)) {
         $error_fields[] = 'length';
     }
 
-    if ($arcs === '') {
+    if ($arcs === '' || $arcs === 'null') {
         $error_fields[] = 'arcs';
     }
 
-    if ($base === '') {
+    if ($base === '' || $arcs === 'null') {
         $error_fields[] = 'base';
     }
 
-    if ($durability === '') {
+    if ($durability === '' || $arcs === 'null') {
         $error_fields[] = 'durability';
     }
 
@@ -80,7 +79,7 @@
         die();
     }
 
-    $path = 'assets/uploads/' . time() . $_FILES['image_path']['name'];
+    $path = 'assets/uploads/' . time() . substr($_FILES['image_path']['name'], strripos($_FILES['image_path']['name'], '.'));
     if (!move_uploaded_file($_FILES['image_path']['tmp_name'], '../../' . $path)) {
         $response = [
             "status" => false,
@@ -102,7 +101,5 @@
 
     }
 
-
     $mysql -> close();
-
  ?>

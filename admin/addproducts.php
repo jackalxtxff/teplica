@@ -74,7 +74,7 @@
                   <input type="text" class="validate" name="discount_price" placeholder="Размер скидки">
                 </div>
                 <div class="col s12 m6">
-                  <textarea class="materialize-textarea" name="description" placeholder="Описание"></textarea>
+                  <textarea class="materialize-textarea validate" name="description" placeholder="Описание"></textarea>
                 </div>
                 <div class="col s12 m6">
                   <div class="file-field input-field">

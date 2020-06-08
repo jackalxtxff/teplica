@@ -381,24 +381,33 @@ $('.access-button').click(function(e) {
         M.toast({
           html: toastHTML
         });
-      } else if (data.type == 3) {
-        let toastHTML = '<span>Товар с таким артикулом существует</span>';
-        M.toast({
-          html: toastHTML
-        });
       } else {
-
-        let toastHTML = '<span>Непредвиденная ошибка</span>';
-        M.toast({
-          html: toastHTML
-        });
-
+        if (data.type == 1) {
+          data.fields.forEach(function (field) {
+              $(`input[name="${field}"]`).addClass('invalid');
+              $(`select[name="${field}"]`).parent('.select-wrapper').children('.select-dropdown').addClass('invalid');
+              $(`textarea[name="${field}"]`).addClass('invalid');
+          });
+          let toastHTML = `<span>${data.message}</span>`;
+          M.toast({
+            html: toastHTML
+          });
+        } else {
+          let toastHTML = `<span>${data.message}</span>`;
+          M.toast({
+            html: toastHTML
+          });
+        }
       }
-
     }
   });
 
 });
+
+$('.input-field').click(function(e) {
+  let elem = e.currentTarget;
+  $(elem).children('.select-wrapper').children('.select-dropdown').removeClass('invalid');
+})
 
 
 $('.action-btn').click(function(e) {
