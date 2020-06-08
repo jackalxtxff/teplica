@@ -10,10 +10,53 @@
             <form class="addproduct">
               <div class="row">
                 <div class="col s12 m6">
-                  <input type="text" class="validate" name="product_name" placeholder="Название товара">
+                  <input type="text" class="validate" name="product_name" placeholder="Название товара" data-length="10">
                 </div>
-                <div class="col s12 m6">
-                  <input type="text" class="validate" name="material_type" placeholder="Тип материала">
+                <div class="input-field col s12 m6">
+                 <select name="material_type" style="display: none;">
+                   <option value="" disabled selected>Тип материала</option>
+                   <?php
+                     require_once 'php/connection.php';
+                     $mysql -> set_charset("utf8");
+                     $query = mysqli_query($mysql, "SELECT * FROM `material_type`");
+                     while($row = mysqli_fetch_assoc($query)) {
+                   ?>
+                   <option value="<?= $row['material_type'] ?>"><?= $row['material_type'] ?></option>
+                   <?php } ?>
+                 </select>
+                </div>
+                <div class="input-field col s12 m6">
+                 <select name="arcs" style="display: none;">
+                   <option value="" disabled selected>Дуга</option>
+                   <?php
+                     $query = mysqli_query($mysql, "SELECT * FROM `product_arcs`");
+                     while($row = mysqli_fetch_assoc($query)) {
+                   ?>
+                   <option value="<?= $row['arcs'] ?>"><?= $row['arcs'] ?></option>
+                 <?php } ?>
+                 </select>
+                </div>
+                <div class="input-field col s12 m6">
+                 <select name="base" style="display: none;">
+                   <option value="" disabled selected>Основание</option>
+                   <?php
+                     $query = mysqli_query($mysql, "SELECT * FROM `product_base`");
+                     while($row = mysqli_fetch_assoc($query)) {
+                   ?>
+                   <option value="<?= $row['base'] ?>"><?= $row['base'] ?></option>
+                   <?php } ?>
+                 </select>
+                </div>
+                <div class="input-field col s12 m6">
+                 <select name="durability" style="display: none;">
+                   <option value="" disabled selected>Прочность</option>
+                   <?php
+                     $query = mysqli_query($mysql, "SELECT * FROM `product_durability` ORDER BY `product_durability`.`id` ASC");
+                     while($row = mysqli_fetch_assoc($query)) {
+                   ?>
+                   <option value="<?= $row['durability'] ?>"><?= $row['durability'] ?></option>
+                   <?php } ?>
+                 </select>
                 </div>
                 <div class="col s12 m6">
                   <input type="text" class="validate" name="width" placeholder="Ширина">
@@ -23,15 +66,6 @@
                 </div>
                 <div class="col s12 m6">
                   <input type="text" class="validate" name="length" placeholder="Длина">
-                </div>
-                <div class="col s12 m6">
-                  <input type="text" class="validate" name="arcs" placeholder="Дуги">
-                </div>
-                <div class="col s12 m6">
-                  <input type="text" class="validate" name="base" placeholder="Основание">
-                </div>
-                <div class="col s12 m6">
-                  <input type="text" class="validate" name="durability" placeholder="Прочность">
                 </div>
                 <div class="col s12 m6">
                   <input type="text" class="validate" name="product_price" placeholder="Цена">

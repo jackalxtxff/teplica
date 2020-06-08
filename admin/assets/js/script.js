@@ -22,6 +22,11 @@ $(document).ready(function() {
   $('.dropdown-trigger').dropdown();
 })
 
+
+$(document).ready(function(){
+  $('select').formSelect();
+});
+
 $("#submit-button").click(function(event) {
   event.preventDefault();
 
@@ -335,15 +340,15 @@ $('.access-button').click(function(e) {
   e.preventDefault();
 
   let product_name = $('input[name="product_name"]').val(),
-      material_type = $('input[name="material_type"]').val(),
+      material_type = $('select[name="material_type"]').val(),
       product_price = $('input[name="product_price"]').val(),
       discount_price = $('input[name="discount_price"]').val(),
       width = $('input[name="width"]').val(),
       height = $('input[name="height"]').val(),
       length = $('input[name="length"]').val(),
-      arcs = $('input[name="arcs"]').val(),
-      base = $('input[name="base"]').val(),
-      durability = $('input[name="durability"]').val(),
+      arcs = $('select[name="arcs"]').val(),
+      base = $('select[name="base"]').val(),
+      durability = $('select[name="durability"]').val(),
       description = $('textarea[name="description"]').val();
 
   let formData = new FormData();
