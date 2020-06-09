@@ -1,7 +1,7 @@
 <?php require_once 'layouts/header.php' ?>
 
 <main>
-  <div class="container">
+  <div class="container90">
     <div class="row">
       <div class="col s12">
         <h2 class="section-title">Товары</h2>

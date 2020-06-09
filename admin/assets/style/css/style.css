@@ -324,3 +324,8 @@ input {
 .access-button {
   margin-top: 30px;
 }
+
+.container90 {
+  margin: 0 auto;
+  width: 90%;
+}

@@ -182,7 +182,7 @@ $('.order-button').click(function(e) {
 
 
 $(window).on('load resize', function() {
-      if ($(window).width() >= '601'){
+      if ($(window).width() >= '601') {
         $('.product-item').hover(function(e){
           let elem = e.currentTarget;
           // $(itemProductHover).find('.item-content').css('filter','blur(5px)');
@@ -194,3 +194,24 @@ $(window).on('load resize', function() {
         })
       }
   });
+
+$(window).on('load resize', function() {
+  let height = 0;
+  let item = $('.product-item');
+  if ($(window).width() >= '601') {
+    for (let i = 0; i < item.length; i++) {
+      $(item[i]).removeAttr('style');
+      if (height < $(item[i]).height()) {
+        height = $(item[i]).height();
+      }
+    }
+    for (let i = 0; i < item.length; i++) {
+      $(item[i]).removeAttr('style');
+      $(item[i]).height(height);
+    }
+  } else {
+    for (let i = 0; i < item.length; i++) {
+      $(item[i]).removeAttr('style');
+    }
+  }
+});
