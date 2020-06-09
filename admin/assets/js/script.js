@@ -150,8 +150,14 @@ $(document).ready(function() {
     let elem = e.currentTarget;
 
     let product_value = $(elem).parents('.edit-box').find('.input-field input[name="change-value"]').val(),
-      product_id = $(elem).parents('tr').find('.id').text(),
-      column_name = $(elem).parents('td').attr('class');
+        product_id = $(elem).parents('tr').find('.id').text(),
+        column_name = $(elem).parents('td').attr('class');
+
+    if (!product_value) {
+      product_value = $(elem).parents('.edit-box').find('select[name="change-value"]').val();
+      if (product_value == null) product_value = "";
+    }
+
 
     let formData = new FormData();
     formData.append('product-value', product_value);
@@ -168,12 +174,12 @@ $(document).ready(function() {
       data: formData,
       success(data) {
         if (data.status) {
-          let toastHTML = '<span>Значение изменено</span>';
+          let toastHTML = `<span>${data.message}</span>`;
           M.toast({
             html: toastHTML
           });
         } else {
-          let toastHTML = '<span>Ошибка: поле пустое</span>';
+          let toastHTML = `<span>${data.message}</span>`;
           M.toast({
             html: toastHTML
           });
@@ -218,10 +224,10 @@ $(document).ready(function() {
   $('#table-product').DataTable({
     language: {
       search: "",
-      searchPlaceholder: "Enter search term"
+      searchPlaceholder: "Что нужно искать"
     },
     dom: 'ft<"footer-wrapper"l<"paging-info"ip>>',
-    scrollY: "400px",
+    scrollY: "700px",
     // scrollX: true,
     scrollCollapse: !0,
     pagingType: "full"

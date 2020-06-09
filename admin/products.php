@@ -74,7 +74,17 @@
                       <p><?= $row['product_name'] ?></p>
                     </div>
                     <div class="edit-box__content input-field">
-                      <input type="text" name="change-value" value="">
+                      <div class="input-field col s12">
+                       <select name="change-value" style="display: none;">
+                         <option value="" disabled selected>Тип материала</option>
+                         <?php
+                           $query4 = mysqli_query($mysql, "SELECT * FROM `material_type`");
+                           while($mat_type = mysqli_fetch_assoc($query4)) {
+                         ?>
+                         <option value="<?= $mat_type['material_type'] ?>"><?= $mat_type['material_type'] ?></option>
+                         <?php } ?>
+                       </select>
+                      </div>
                     </div>
                     <div class="edit-box__footer">
                       <a href="#" class="close btn wafes-effect">Отменить</a>
@@ -134,7 +144,17 @@
                       <p><?= $row['product_name'] ?></p>
                     </div>
                     <div class="edit-box__content input-field">
-                      <input type="text" name="change-value" value="">
+                      <div class="input-field col s12">
+                       <select name="change-value" style="display: none;">
+                         <option value="" disabled selected>Дуги</option>
+                         <?php
+                           $query3 = mysqli_query($mysql, "SELECT * FROM `product_arcs`");
+                           while($arcs = mysqli_fetch_assoc($query3)) {
+                         ?>
+                         <option value="<?= $arcs['arcs'] ?>"><?= $arcs['arcs'] ?></option>
+                         <?php } ?>
+                       </select>
+                      </div>
                     </div>
                     <div class="edit-box__footer">
                       <a href="#" class="close btn wafes-effect">Отменить</a>
@@ -149,7 +169,17 @@
                       <p><?= $row['product_name'] ?></p>
                     </div>
                     <div class="edit-box__content input-field">
-                      <input type="text" name="change-value" value="">
+                      <div class="input-field col s12">
+                       <select name="change-value" style="display: none;">
+                         <option value="" disabled selected>Основание</option>
+                         <?php
+                           $query2 = mysqli_query($mysql, "SELECT * FROM `product_base`");
+                           while($base = mysqli_fetch_assoc($query2)) {
+                         ?>
+                         <option value="<?= $base['base'] ?>"><?= $base['base'] ?></option>
+                         <?php } ?>
+                       </select>
+                      </div>
                     </div>
                     <div class="edit-box__footer">
                       <a href="#" class="close btn wafes-effect">Отменить</a>
@@ -164,7 +194,17 @@
                       <p><?= $row['product_name'] ?></p>
                     </div>
                     <div class="edit-box__content input-field">
-                      <input type="text" name="change-value" value="">
+                      <div class="input-field col s12">
+                       <select name="change-value" style="display: none;">
+                         <option value="" disabled selected>Прочность</option>
+                         <?php
+                           $query3 = mysqli_query($mysql, "SELECT * FROM `product_durability` ORDER BY `product_durability`.`id` ASC");
+                           while($durability = mysqli_fetch_assoc($query3)) {
+                         ?>
+                         <option value="<?= $durability['durability'] ?>"><?= $durability['durability'] ?></option>
+                         <?php } ?>
+                       </select>
+                      </div>
                     </div>
                     <div class="edit-box__footer">
                       <a href="#" class="close btn wafes-effect">Отменить</a>
