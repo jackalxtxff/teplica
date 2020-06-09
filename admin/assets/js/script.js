@@ -377,7 +377,7 @@ $('.access-button').click(function(e) {
     success(data) {
 
       if (data.status) {
-        let toastHTML = '<span>Данные добавлены</span>';
+        let toastHTML = `<span>${data.message}</span>`;
         M.toast({
           html: toastHTML
         });
