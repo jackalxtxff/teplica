@@ -66,10 +66,9 @@ $(document).ready(function() {
 
 $('.modal-buy-trigger').click(function(e) {
     let elem = e.currentTarget;
-
-    let product_id = $('.order-button').attr('product_id');
-    if (product_id == "") {
-      product_id = $(elem).parents('.product-item').attr('product-id');
+    let product_id = $(elem).parents('.product-item').attr('product-id');
+    if (!product_id) {
+      product_id = $('.order-button').attr('product_id');
     }
 
     let formData = new FormData();
@@ -85,6 +84,7 @@ $('.modal-buy-trigger').click(function(e) {
         data: formData,
         success (data) {
             if (data.status) {
+              $(".modal img").attr("src", data.product.image_path);
               $(".modal .product_name").text(data.product.product_name);
               $(".modal .product_price").text(data.product.product_price);
               $(".modal .size").text("Размеры: ширина " + data.product.width + " м, " + "высота " + data.product.height + " м, " + "длина " + data.product.height + " м. ");
