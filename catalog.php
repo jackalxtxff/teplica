@@ -43,19 +43,47 @@
   </div>
   <div class="modal">
     <div class="modal-content">
-      <div class="product row">
-        <img src="assets/img/glavnaya.jpg" class="img-responsive col s12 m6">
-        <div class="product_elem col s12 m6">
-          <h4 class="product_name">Имя</h4>
-          <p class="product_price">Цена</p>
-          <p class="size">Размеры</p>
-          <p class="material_type">Материал</p>
-          <p class="arcs">Дуги</p>
-          <p class="base">Основание</p>
-          <p class="durability">Прочность</p>
-          <p class="description">Описание</p>
+      <section class="product row">
+        <div class="product-image col s12 m6">
+          <img src="" alt="">
         </div>
-      </div>
+        <div class="product-feature col s12 m6">
+          <div class="product_name">
+          </div>
+          <div class="vendor_code">
+            <p>Артикул: <span class="vendor_code"></span></p>
+          </div>
+          <div class="product_price">
+            <p><span class="product_price"></span> руб</p>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="product_about col s12">
+            <p class="title-about">О товаре</p>
+            <div class="description">
+              <div class="product_size">
+                <p>Размеры: <span class="product_size"></span></p>
+              </div>
+              <div class="material_type">
+                <p>Материал: </p><span class="material_type"></span>
+              </div>
+              <div class="product_arcs">
+                <p>Дуги: <span class="product_arcs"></span></p>
+              </div>
+              <div class="product_base">
+                <p>Основание: <span class="product_base"></span></p>
+              </div>
+              <div class="product_durability">
+                <p>Прочность: <span class="product_durability"></span></p>
+              </div>
+              <div class="product_description">
+                <p>Описание: <span class="product_description"></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <div class="feedback">
         <form action="">
           <h4 style="display: inline-block;">Оставьте свои контакты, чтобы мы связались с вами</h4>

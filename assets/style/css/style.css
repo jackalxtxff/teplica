@@ -838,6 +838,17 @@ justify-content: center;
   width: 50%;
 }
 
+
+.modal section.product .product_name {
+  font-size: 25px;
+  color: green;
+}
+
+.modal section.product .description div, section.product .description div {
+  margin: 5px 0 0 0;
+}
+
+
 section.product .product-image img {
   border: 1px solid #e6e6e6;
   height: auto;

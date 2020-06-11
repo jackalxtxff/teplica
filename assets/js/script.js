@@ -86,13 +86,14 @@ $('.modal-buy-trigger').click(function(e) {
             if (data.status) {
               $(".modal img").attr("src", data.product.image_path);
               $(".modal .product_name").text(data.product.product_name);
-              $(".modal .product_price").text(data.product.product_price);
-              $(".modal .size").text("Размеры: ширина " + data.product.width + " м, " + "высота " + data.product.height + " м, " + "длина " + data.product.height + " м. ");
-              $(".modal .arcs").text("Дуги: " + data.product.arcs);
-              $(".modal .base").text("Основание: " + data.product.base);
-              $(".modal .durability").text("Прочность: " + data.product.durability);
-              $(".modal .material_type").text("Материал: " + data.product.material_type);
-              $(".modal .description").text("Описание: " + data.product.description);
+              $(".modal span.product_price").text(data.product.product_price);
+              $(".modal span.vendor_code").text(data.product.id);
+              $(".modal span.product_size").text(`ширина ${data.product.width} м, высота ${data.product.height} м, длина ${data.product.length} м`);
+              $(".modal span.product_arcs").text(data.product.arcs);
+              $(".modal span.product_base").text(data.product.base);
+              $(".modal span.product_durability").text(data.product.durability);
+              $(".modal span.material_type").text(data.product.material_type);
+              $(".modal span.product_description").text(data.product.description);
               $(".modal .order-button").attr("product_id", data.product.id);
             } else {
               alert(data.message);
