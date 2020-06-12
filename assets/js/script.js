@@ -216,3 +216,43 @@ $(window).on('load resize', function() {
     }
   }
 });
+
+$('.collapsible-header').click(function() {
+  $('.collapsible-body').slideToggle(400);
+})
+
+$('.selection-btn').click(function(e) {
+    e.preventDefault();
+
+    let width = $('select[name="width"]').val(),
+        height = $('select[name="height"]').val(),
+        length = $('select[name="length"]').val(),
+        arcs = $('select[name="arcs"]').val(),
+        base = $('select[name="base"]').val();
+
+    let formData = new FormData();
+    formData.append('width', width);
+    formData.append('height', height);
+    formData.append('length', length);
+    formData.append('arcs', arcs);
+    formData.append('base', base);
+
+    $.ajax({
+        url: 'php/selectionOut.php',
+        type: 'POST',
+        dataType: 'json',
+        processData: false,
+        contentType: false,
+        cache: false,
+        data: formData,
+        success (data) {
+            if (data.status) {
+              alert('Заказ зарегистрирован');
+            } else {
+              alert(data.message);
+            }
+
+        }
+    });
+
+});

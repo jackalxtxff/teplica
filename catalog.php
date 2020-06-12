@@ -1,12 +1,87 @@
-<?php require_once 'layouts/header.php' ?>
+<?php
+  require_once 'layouts/header.php';
+  require_once 'php/connection.php';
+  $mysql -> set_charset("utf8");
+?>
 
 <main class="transition-fade" id="swup">
   <h1>Каталог</h1>
   <div class="container">
+    <div class="collapsible row">
+      <button class="collapsible-header button-product col s12">
+        Нажать
+      </button>
+      <div class="collapsible-body col s12" style="display: none;">
+        <form class="form-selection">
+          <div class="row">
+            <div class="input-b col s12 m4">
+							<div class="label">
+								Ширина
+							</div>
+							<select name="width">
+								<option value="2">2 метра</option>
+								<option value="2.5">2.5 метра</option>
+								<option value="3">3 метра</option>
+							</select>
+            </div>
+            <div class="input-b col s12 m4">
+							<div class="label">
+								Высота
+							</div>
+							<select name="height">
+								<option value="2">2 метра</option>
+								<option value="3">3 метра</option>
+							</select>
+            </div>
+            <div class="input-b col s12 m4">
+							<div class="label">
+								Длина
+							</div>
+							<select name="length">
+								<option value="4">4 метра</option>
+								<option value="6">6 метров</option>
+								<option value="8">8 метров</option>
+								<option value="10">10 метров</option>
+								<option value="12">12 метров</option>
+							</select>
+            </div>
+            <div class="input-b col s12 m4">
+							<div class="label">
+								Дуги
+							</div>
+							<select name="arcs">
+                <?php
+                  $query = mysqli_query($mysql, "SELECT * FROM `product_arcs`");
+                  while($row = mysqli_fetch_assoc($query)) {
+                ?>
+								<option value="<?= $row['arcs'] ?>"><?= $row['arcs'] ?></option>
+                <?php } ?>
+							</select>
+            </div>
+            <div class="input-b col s12 m4">
+							<div class="label">
+								Основание
+							</div>
+							<select name="base">
+                <?php
+                  $query = mysqli_query($mysql, "SELECT * FROM `product_base`");
+                  while($row = mysqli_fetch_assoc($query)) {
+                ?>
+                <option value="<?= $row['base'] ?>"><?= $row['base'] ?></option>
+                <?php } ?>
+							</select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m4 offset-m4">
+              <button class="button-product selection-btn">Подобрать</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
     <div class="catalog_wrapper row">
       <?php
-        require_once 'php/connection.php';
-        $mysql -> set_charset("utf8");
         $query = mysqli_query($mysql, "SELECT * FROM `catalog_product` WHERE `available` = 1");
         while($row = mysqli_fetch_assoc($query)) {
       ?>
