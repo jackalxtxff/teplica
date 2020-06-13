@@ -80,6 +80,17 @@
         </form>
       </div>
     </div>
+    <div class="sorting row">
+      Сортировать:
+      <span>
+        <label for="sort-price" class="sort-item">по цене</label>
+        <input type="radio" name="sorting" id="sort-price" value="product_price" class="sorting-value">
+        <label for="sort-width" class="sort-item">по ширине</label>
+        <input type="radio" name="sorting" id="sort-width" value="width" class="sorting-value">
+        <label for="sort-length" class="sort-item">по длине</label>
+        <input type="radio" name="sorting" id="sort-length" value="length" class="sorting-value">
+      </span>
+    </div>
     <div class="catalog_wrapper row">
     </div>
 

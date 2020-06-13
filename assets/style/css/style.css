@@ -965,6 +965,10 @@ section.product .product_about {
   font-size: 14px;
 }
 
+.sorting .sort-item {
+  margin: 0 10px;
+}
+
 @media only screen and (min-width: 601px) {
   .product-time_btn {
     display: none;

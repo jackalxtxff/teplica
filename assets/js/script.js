@@ -100,11 +100,12 @@ function productHeight() {
   }
 };
 
-function loadProductItem() {
+function loadProductItem(sort) {
+  alert(sort);
   $.ajax({
     url: 'php/productItem.php',
     type: 'POST',
-    data: '',
+    data: sort,
     success(data) {
       $('.catalog_wrapper').html(data);
       productItemHover();
@@ -142,12 +143,6 @@ $(document).ready(function() {
   loadProductItem();
   bind();
 });
-
-
-
-
-
-
 
 $('.message-button').click(function(e) {
   e.preventDefault();
@@ -268,4 +263,9 @@ $('.selection-btn').click(function(e) {
     }
   });
 
+});
+
+$('.sort-item').click(function() {
+  let sort = $('input[name="sorting"]:checked').val();
+  loadProductItem(sort);
 });
