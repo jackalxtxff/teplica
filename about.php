@@ -21,7 +21,7 @@
         голову пришла идея для своего дела.
 
       </div>
-      <div class="text_about"><img src="assets/img/glavnaya.jpg"></div>
+      <div class="text_about"><img class="img-responsive" src="assets/img/glavnaya.jpg"></div>
 
     </div>
 
