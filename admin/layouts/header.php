@@ -38,9 +38,9 @@
         <div class="nav-wrapper">
           <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
           <ul id="nav-mobile" class="right">
-            <li class="hide-on-med-and-down">
+            <!-- <li class="hide-on-med-and-down">
               <a href="#!" class="waves-effect"><i class="material-icons">notifications</i></a>
-            </li>
+            </li> -->
             <li>
               <a href="#!" class='waves-effect dropdown-trigger' data-target='dropdown1'><i class="material-icons">settings</i></a>
               <ul id='dropdown1' class='dropdown-content'>
@@ -65,7 +65,7 @@
               </ul>
             </div>
           </li>
-          <li class="waves-effect">
+          <!-- <li class="waves-effect">
             <a class="collapsible-header">Dropdown<i class="material-icons chevron">chevron_left</i></a>
             <div class="collapsible-body">
               <ul>
@@ -75,7 +75,7 @@
                 <li><a class="waves-effect">Fourth</a></li>
               </ul>
             </div>
-          </li>
+          </li> -->
         </ul>
       </li>
     </ul>

@@ -1,3 +1,4 @@
+/* line 3, ../scss/style.scss */
 body {
   background-color: #f4f4f4;
   font-family: Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
@@ -5,32 +6,39 @@ body {
   color: rgba(0, 0, 0, 0.87);
 }
 
+/* line 16, ../scss/style.scss */
 nav {
   background: #ffffff;
   color: rgba(0, 0, 0, 0.87);
 }
+/* line 20, ../scss/style.scss */
 nav .brand-logo {
   color: rgba(0, 0, 0, 0.87);
   font-size: 18px;
 }
+/* line 25, ../scss/style.scss */
 nav.navbar {
   z-index: 10;
   transition: box-shadow 0.3s, background-color 0.3s;
   padding: 0 20px;
-  background-color: #fff;
+  background-color: #59A857;
   color: rgba(0, 0, 0, 0.87);
 }
+/* line 34, ../scss/style.scss */
 nav.navbar .nav-wrapper .sidenav-trigger i.material-icons {
   color: rgba(0, 0, 0, 0.87);
 }
+/* line 42, ../scss/style.scss */
 nav ul a {
   color: rgba(0, 0, 0, 0.87);
 }
 
+/* line 48, ../scss/style.scss */
 .sidenav {
   box-shadow: none;
-  background-color: #448AFF;
+  background-color: #59A857;
 }
+/* line 52, ../scss/style.scss */
 .sidenav .logo-container {
   padding: 0 16px;
   height: 64px;
@@ -39,18 +47,22 @@ nav ul a {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   box-sizing: content-box;
 }
+/* line 60, ../scss/style.scss */
 .sidenav .logo-container i.material-icons {
   line-height: inherit;
 }
+/* line 65, ../scss/style.scss */
 .sidenav li {
   line-height: 64px;
 }
+/* line 68, ../scss/style.scss */
 .sidenav li > a {
   font-weight: 500;
   font-size: 14px;
   height: 48px;
   line-height: 48px;
 }
+/* line 74, ../scss/style.scss */
 .sidenav li > a > i.material-icons {
   float: left;
   height: 48px;
@@ -59,14 +71,17 @@ nav ul a {
   width: 24px;
   color: rgba(0, 0, 0, 0.54);
 }
+/* line 86, ../scss/style.scss */
 .sidenav .collapsible > li {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
+/* line 90, ../scss/style.scss */
 .sidenav .collapsible .collapsible-header {
   text-transform: uppercase;
   height: 64px;
   line-height: 64px;
 }
+/* line 95, ../scss/style.scss */
 .sidenav .collapsible .collapsible-header .chevron {
   float: right;
   height: 24px;
@@ -75,58 +90,74 @@ nav ul a {
   margin: 20px 0 0;
   transition: transform 0.2s;
 }
+/* line 105, ../scss/style.scss */
 .sidenav .collapsible .collapsible-body {
   padding-bottom: 16px;
   background-color: transparent;
 }
+/* line 110, ../scss/style.scss */
 .sidenav .collapsible .collapsible-body li > a {
   padding: 0 16px;
   transition: background-color 0.2s ease-out;
 }
+/* line 114, ../scss/style.scss */
 .sidenav .collapsible .collapsible-body li > a > i.material-icons {
   margin-right: 16px;
 }
+/* line 118, ../scss/style.scss */
 .sidenav .collapsible .collapsible-body li > a.active {
   background-color: rgba(0, 0, 0, 0.07);
 }
+/* line 122, ../scss/style.scss */
 .sidenav .collapsible .collapsible-body li > a:hover {
   background-color: rgba(0, 0, 0, 0.07);
 }
+/* line 129, ../scss/style.scss */
 .sidenav .collapsible > .active .collapsible-header .chevron {
   transform: rotate(-90deg);
 }
 
+/* line 135, ../scss/style.scss */
 .waves-effect {
   display: block;
 }
 
+/* line 139, ../scss/style.scss */
 tr {
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
+/* line 144, ../scss/style.scss */
 .dataTables_wrapper {
   border-top: 1px solid rgba(0, 0, 0, 0.12);
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
+/* line 149, ../scss/style.scss */
 .dataTables_wrapper.no-footer .dataTables_scrollHead .dataTables_scrollHeadInner table.dataTable {
   border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
+/* line 153, ../scss/style.scss */
 .dataTables_wrapper.no-footer div.dataTables_scrollHead table.dataTable {
   border-bottom: none;
 }
+/* line 157, ../scss/style.scss */
 .dataTables_wrapper.no-footer div.dataTables_scrollBody > table {
   border-bottom: none;
 }
+/* line 161, ../scss/style.scss */
 .dataTables_wrapper.no-footer .dataTables_scrollBody {
   border-color: rgba(0, 0, 0, 0.12);
 }
+/* line 167, ../scss/style.scss */
 .dataTables_wrapper table .dataTable tr {
   border-color: rgba(0, 0, 0, 0.12);
   background-color: transparent;
 }
+/* line 173, ../scss/style.scss */
 .dataTables_wrapper .dataTables_paginate {
   padding: 4px;
 }
+/* line 176, ../scss/style.scss */
 .dataTables_wrapper .dataTables_paginate .disabled.paginate_button.first,
 .dataTables_wrapper .dataTables_paginate .disabled.paginate_button.previous,
 .dataTables_wrapper .dataTables_paginate .disabled.paginate_button.next,
@@ -134,6 +165,7 @@ tr {
   color: rgba(0, 0, 0, 0.26) !important;
   border: 0;
 }
+/* line 183, ../scss/style.scss */
 .dataTables_wrapper .dataTables_paginate .disabled.paginate_button.first:hover,
 .dataTables_wrapper .dataTables_paginate .disabled.paginate_button.previous:hover,
 .dataTables_wrapper .dataTables_paginate .disabled.paginate_button.next:hover,
@@ -141,6 +173,7 @@ tr {
   color: rgba(0, 0, 0, 0.26) !important;
   border: 0;
 }
+/* line 189, ../scss/style.scss */
 .dataTables_wrapper .dataTables_paginate .paginate_button.first,
 .dataTables_wrapper .dataTables_paginate .paginate_button.previous,
 .dataTables_wrapper .dataTables_paginate .paginate_button.next,
@@ -157,6 +190,7 @@ tr {
   border-radius: 50%;
   background: transparent;
 }
+/* line 205, ../scss/style.scss */
 .dataTables_wrapper .dataTables_paginate .paginate_button.first:before,
 .dataTables_wrapper .dataTables_paginate .paginate_button.previous:before,
 .dataTables_wrapper .dataTables_paginate .paginate_button.next:before,
@@ -166,6 +200,7 @@ tr {
   line-height: 24px;
   font-size: 24px;
 }
+/* line 212, ../scss/style.scss */
 .dataTables_wrapper .dataTables_paginate .paginate_button.first:hover,
 .dataTables_wrapper .dataTables_paginate .paginate_button.previous:hover,
 .dataTables_wrapper .dataTables_paginate .paginate_button.next:hover,
@@ -175,38 +210,48 @@ tr {
   border: 0;
   box-shadow: none;
 }
+/* line 220, ../scss/style.scss */
 .dataTables_wrapper .dataTables_paginate .paginate_button.first:before {
   content: 'first_page';
 }
+/* line 224, ../scss/style.scss */
 .dataTables_wrapper .dataTables_paginate .paginate_button.previous:before {
   content: 'chevron_left';
 }
+/* line 228, ../scss/style.scss */
 .dataTables_wrapper .dataTables_paginate .paginate_button.next:before {
   content: 'chevron_right';
 }
+/* line 232, ../scss/style.scss */
 .dataTables_wrapper .dataTables_paginate .paginate_button.last:before {
   content: 'last_page';
 }
+/* line 237, ../scss/style.scss */
 .dataTables_wrapper .dataTables_info {
   line-height: 48px;
   padding: 0;
 }
+/* line 242, ../scss/style.scss */
 .dataTables_wrapper .footer-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 18px;
 }
+/* line 249, ../scss/style.scss */
 .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td {
   user-select: none;
 }
+/* line 253, ../scss/style.scss */
 .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td div.edit-box__title {
   user-select: all;
 }
+/* line 260, ../scss/style.scss */
 .dataTables_filter {
   padding-right: 18px;
 }
 
+/* line 265, ../scss/style.scss */
 .edit-box {
   text-align: left;
   width: 320px;
@@ -217,20 +262,25 @@ tr {
   z-index: 99;
   padding: 0 10px 10px 10px;
 }
+/* line 276, ../scss/style.scss */
 .edit-box__title p {
   font-size: 20px;
 }
+/* line 282, ../scss/style.scss */
 .edit-box__footer {
   float: right;
 }
 
+/* line 287, ../scss/style.scss */
 table.dataTable {
   border-collapse: collapse;
 }
+/* line 290, ../scss/style.scss */
 table.dataTable thead th {
   border: none;
 }
 
+/* line 295, ../scss/style.scss */
 select {
   background-color: rgba(255, 255, 255, 0.9);
   width: 100%;
@@ -241,6 +291,7 @@ select {
   display: inline-block;
 }
 
+/* line 305, ../scss/style.scss */
 input[type=search]:not(.browser-default), input[type=text]:not(.browser-default), textarea.materialize-textarea {
   background-color: transparent;
   border: none;
@@ -257,16 +308,19 @@ input[type=search]:not(.browser-default), input[type=text]:not(.browser-default)
   transition: box-shadow 0.3s, border 0.3s;
 }
 
+/* line 321, ../scss/style.scss */
 input[type=text]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
   border-bottom: 1px solid #26a69a;
   -webkit-box-shadow: 0 1px 0 0 #26a69a;
   box-shadow: 0 1px 0 0 #26a69a;
 }
 
+/* line 327, ../scss/style.scss */
 input {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 }
 
+/* line 331, ../scss/style.scss */
 .access-button {
   margin-top: 30px;
 }
@@ -274,4 +328,10 @@ input {
 .container90 {
   margin: 0 auto;
   width: 90%;
+}
+.btn{
+  background-color:#59A857;
+}
+.btn:hover{
+  background-color: #6c3;
 }
