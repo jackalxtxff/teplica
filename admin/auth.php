@@ -58,7 +58,7 @@ input {
 }
 /* ---------- LOGIN ---------- */
 #login h2 {
-  background: #f95252;
+  background:#59A857;
   border-radius: 20px 20px 0 0;
   color: #fff;
   font-size: 28px;
@@ -89,7 +89,7 @@ input {
   width: 100%;
 }
 #login fieldset input[type="submit"] {
-  background: #33cc77;
+  background: #59A857;
   color: #fff;
   display: block;
   margin: 0 auto;
