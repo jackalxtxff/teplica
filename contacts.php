@@ -49,7 +49,7 @@
 
 				<div class="contacts-adress">
 				<h3>Наш Адресс</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, </p>
+				<p>П. Ува ул.Максима Горького 48</p>
 				<p class="contacts-alert"><strong>Внимание!</strong> Все поля обязательны для заполнения.</p>
 			</div>
 		</div>

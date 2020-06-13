@@ -46,7 +46,7 @@
 			</div>
       <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="<?php echo $url_index; ?>">Гланая</a>
+        <a href="<?php echo $url_index; ?>">Главная</a>
         <a href="<?php echo $url_catalog; ?>">Каталог</a>
         <a href="<?php echo $url_about; ?>">О нас</a>
         <a href="<?php echo $url_answers; ?>">Ответы</a>
