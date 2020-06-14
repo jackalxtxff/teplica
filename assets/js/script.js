@@ -101,11 +101,15 @@ function productHeight() {
 };
 
 function loadProductItem(sort) {
-  alert(sort);
+
+  let formData = new FormData();
+  formData.append('sort', sort);
   $.ajax({
     url: 'php/productItem.php',
     type: 'POST',
-    data: sort,
+    processData: false,
+    contentType: false,
+    data: formData,
     success(data) {
       $('.catalog_wrapper').html(data);
       productItemHover();
