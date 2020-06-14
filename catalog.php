@@ -81,7 +81,16 @@
       </div>
     </div>
     <div class="sorting row">
-      Сортировать:
+      <div class="input-b col s12 m4">
+        <select name="sorting">
+          <option value="product_price">По цене</option>
+          <option value="width">По ширине</option>
+          <option value="length">По длине</option>
+        </select>
+      </div>
+      <i class="queue-sort fas fa-sort-amount-down-alt" sorting="ASC"></i>
+      <i class="queue-sort fas fa-sort-amount-up-alt" sorting="DESC"></i>
+      <!-- Сортировать:
       <span>
         <label for="sort-price" class="sort-item">по цене</label>
         <input type="radio" name="sorting" id="sort-price" value="product_price" class="sorting-value">
@@ -89,7 +98,7 @@
         <input type="radio" name="sorting" id="sort-width" value="width" class="sorting-value">
         <label for="sort-length" class="sort-item">по длине</label>
         <input type="radio" name="sorting" id="sort-length" value="length" class="sorting-value">
-      </span>
+      </span> -->
     </div>
     <div class="catalog_wrapper row">
     </div>

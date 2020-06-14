@@ -14,7 +14,7 @@
 </footer>
 <div class="sidenav-overlay"></div>
 
-
+<script src="https://kit.fontawesome.com/f062a0f1ab.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="assets/js/jquery.maskedinput.js"></script>
 <script src="assets/js/form.js"></script>

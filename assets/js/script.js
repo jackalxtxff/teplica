@@ -100,10 +100,12 @@ function productHeight() {
   }
 };
 
-function loadProductItem(sort) {
+function loadProductItem(sort, queue) {
 
   let formData = new FormData();
   formData.append('sort', sort);
+  formData.append('queue', queue);
+
   $.ajax({
     url: 'php/productItem.php',
     type: 'POST',
@@ -144,8 +146,9 @@ $('.sidenav-overlay').click(function() {
 
 
 $(document).ready(function() {
-  loadProductItem();
+  loadProductItem(sort, queue);
   bind();
+  hideQueue();
 });
 
 $('.message-button').click(function(e) {
@@ -266,10 +269,32 @@ $('.selection-btn').click(function(e) {
       }
     }
   });
-
 });
 
-$('.sort-item').click(function() {
-  let sort = $('input[name="sorting"]:checked').val();
-  loadProductItem(sort);
+var sort;
+var queue = "DESC";
+
+function hideQueue() {
+  if (queue == "DESC") {
+    $('.queue-sort[sorting="ASC"]').removeAttr('style');
+    $('.queue-sort[sorting="DESC"]').css('display', 'none');
+  }
+  if (queue == "ASC") {
+    $('.queue-sort[sorting="DESC"]').removeAttr('style');
+    $('.queue-sort[sorting="ASC"]').css('display', 'none');
+  }
+}
+
+$('.queue-sort').click(function(e) {
+  let elem = e.currentTarget;
+  let sort = $('select[name="sorting"]').val();
+  queue = $(elem).attr('sorting');
+  hideQueue();
+  loadProductItem(sort, queue);
+  return queue;
+});
+
+$('select[name="sorting"]').change(function() {
+  sort = $('select[name="sorting"]').val();
+  loadProductItem(sort, queue);
 });
