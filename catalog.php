@@ -7,7 +7,7 @@
 <main class="transition-fade" id="swup">
   <h1>Каталог</h1>
   <div class="container">
-    <div class="collapsible row">
+    <!-- <div class="collapsible row">
       <button class="collapsible-header button-product col s12">
         Нажать
       </button>
@@ -79,26 +79,93 @@
           </div>
         </form>
       </div>
-    </div>
-    <div class="sorting row">
-      <div class="input-b col s12 m4">
+    </div> -->
+    <div class="sorting collapsible row">
+      <div class="input-b col s10 m4">
         <select name="sorting">
           <option value="product_price">По цене</option>
           <option value="width">По ширине</option>
           <option value="length">По длине</option>
         </select>
       </div>
-      <i class="queue-sort fas fa-sort-amount-down-alt" sorting="ASC"></i>
-      <i class="queue-sort fas fa-sort-amount-up-alt" sorting="DESC"></i>
-      <!-- Сортировать:
-      <span>
-        <label for="sort-price" class="sort-item">по цене</label>
-        <input type="radio" name="sorting" id="sort-price" value="product_price" class="sorting-value">
-        <label for="sort-width" class="sort-item">по ширине</label>
-        <input type="radio" name="sorting" id="sort-width" value="width" class="sorting-value">
-        <label for="sort-length" class="sort-item">по длине</label>
-        <input type="radio" name="sorting" id="sort-length" value="length" class="sorting-value">
-      </span> -->
+      <i class="queue-sort fas fa-sort-amount-down-alt col s1 m1" sorting="ASC"></i>
+      <i class="queue-sort fas fa-sort-amount-up-alt col s1 m1" sorting="DESC"></i>
+      <button class="collapsible-header button-sorting col s12 m7">
+        Фильтры
+      </button>
+      <div class="collapsible-body col s12" style="display: none;">
+        <form class="form-selection">
+          <div class="row">
+            <div class="input-b col s12 m4">
+							<div class="label">
+								Ширина
+							</div>
+							<select class="select" name="width">
+                <option value="" selected>Выбрать</option>
+								<option value="2">2 метра</option>
+								<option value="2.5">2.5 метра</option>
+								<option value="3">3 метра</option>
+							</select>
+            </div>
+            <div class="input-b col s12 m4">
+							<div class="label">
+								Высота
+							</div>
+							<select class="select" name="height">
+                <option value="" selected>Выбрать</option>
+								<option value="2">2 метра</option>
+								<option value="3">3 метра</option>
+							</select>
+            </div>
+            <div class="input-b col s12 m4">
+							<div class="label">
+								Длина
+							</div>
+							<select class="select" name="length">
+                <option value="" selected>Выбрать</option>
+								<option value="4">4 метра</option>
+								<option value="6">6 метров</option>
+								<option value="8">8 метров</option>
+								<option value="10">10 метров</option>
+								<option value="12">12 метров</option>
+							</select>
+            </div>
+            <div class="input-b col s12 m4">
+							<div class="label">
+								Дуги
+							</div>
+							<select class="select" name="arcs">
+                <option value="" selected>Выбрать</option>
+                <?php
+                  $query = mysqli_query($mysql, "SELECT * FROM `product_arcs`");
+                  while($row = mysqli_fetch_assoc($query)) {
+                ?>
+								<option value="<?= $row['arcs'] ?>"><?= $row['arcs'] ?></option>
+                <?php } ?>
+							</select>
+            </div>
+            <div class="input-b col s12 m4">
+							<div class="label">
+								Основание
+							</div>
+							<select class="select" name="base">
+                <option value="" selected>Выбрать</option>
+                <?php
+                  $query = mysqli_query($mysql, "SELECT * FROM `product_base`");
+                  while($row = mysqli_fetch_assoc($query)) {
+                ?>
+                <option value="<?= $row['base'] ?>"><?= $row['base'] ?></option>
+                <?php } ?>
+							</select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m4 offset-m4">
+              <button class="button-product selection-btn">Показать</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
     <div class="catalog_wrapper row">
     </div>

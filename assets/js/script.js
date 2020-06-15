@@ -100,11 +100,12 @@ function productHeight() {
   }
 };
 
-function loadProductItem(sort, queue) {
+function loadProductItem(sort, queue, load) {
 
   let formData = new FormData();
   formData.append('sort', sort);
   formData.append('queue', queue);
+  formData.append('load', load);
 
   $.ajax({
     url: 'php/productItem.php',
@@ -146,7 +147,7 @@ $('.sidenav-overlay').click(function() {
 
 
 $(document).ready(function() {
-  loadProductItem(sort, queue);
+  loadProductItem(sort, queue, load);
   bind();
   hideQueue();
 });
@@ -237,9 +238,14 @@ $('.collapsible-header').click(function() {
   $('.collapsible-body').slideToggle(400);
 });
 
-$('.selection-btn').click(function(e) {
-  e.preventDefault();
+var load = "";
 
+$('select.select').change(function(e) {
+  e.preventDefault();
+  selection();
+});
+
+function selection() {
   let width = $('select[name="width"]').val(),
     height = $('select[name="height"]').val(),
     length = $('select[name="length"]').val(),
@@ -263,13 +269,14 @@ $('.selection-btn').click(function(e) {
     data: formData,
     success(data) {
       if (data.status) {
-        alert('Заказ зарегистрирован');
+        $('.selection-btn').text(`Показать (совпадений ${data.count})`)
+        load = data.load;
       } else {
         alert(data.message);
       }
     }
   });
-});
+}
 
 var sort;
 var queue = "DESC";
@@ -285,16 +292,22 @@ function hideQueue() {
   }
 }
 
+$('.selection-btn').click(function(e) {
+  e.preventDefault();
+  loadProductItem(sort, queue, load);
+  $('.collapsible-body').slideToggle(400);
+})
+
 $('.queue-sort').click(function(e) {
   let elem = e.currentTarget;
   let sort = $('select[name="sorting"]').val();
   queue = $(elem).attr('sorting');
   hideQueue();
-  loadProductItem(sort, queue);
+  loadProductItem(sort, queue, load);
   return queue;
 });
 
 $('select[name="sorting"]').change(function() {
   sort = $('select[name="sorting"]').val();
-  loadProductItem(sort, queue);
+  loadProductItem(sort, queue, load);
 });
