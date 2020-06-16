@@ -177,7 +177,7 @@
             </div>
             <div class="row">
               <div class="col s12 m4 offset-m4">
-                <button class="button-product selection-btn">Показать</button>
+                <button class="button-product selection-btn" style="border-radius: 10px;">Показать</button>
               </div>
             </div>
           </form>
