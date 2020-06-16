@@ -991,7 +991,10 @@ section.product .product_about {
 }
 
 
-
+@media only screen and (max-width: 999px) {
+  .contacts {
+    padding-bottom: 200px;
+  }
 
 
 
