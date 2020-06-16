@@ -90,9 +90,14 @@
       </div>
       <i class="queue-sort fas fa-sort-amount-down-alt col s1 m1" sorting="ASC"></i>
       <i class="queue-sort fas fa-sort-amount-up-alt col s1 m1" sorting="DESC"></i>
-      <div class="col s12 m7">
-        <button class="collapsible-header button-sorting">
+      <div class="col s12 m4">
+        <button class="collapsible-header button-sorting button-filter">
           Фильтры
+        </button>
+      </div>
+      <div class="col s12 m3">
+        <button class="button-filter reset">
+          Сбросить
         </button>
       </div>
       <div class="col s12">

@@ -150,6 +150,7 @@ $(document).ready(function() {
   loadProductItem(sort, queue, load);
   bind();
   hideQueue();
+  $('.form-selection select option[value=""]').prop('selected', true);
 });
 
 $('.message-button').click(function(e) {
@@ -291,6 +292,16 @@ function hideQueue() {
     $('.queue-sort[sorting="ASC"]').css('display', 'none');
   }
 }
+
+$('.reset').click(function() {
+  load = "";
+  sort = "";
+  loadProductItem(sort, queue, load);
+  $('.form-selection select option[value=""]').prop('selected', true);
+  $('.selection-btn').text('Показать');
+  $('.collapsible-body').slideUp(400);
+});
+
 
 $('.selection-btn').click(function(e) {
   e.preventDefault();

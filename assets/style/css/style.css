@@ -847,7 +847,7 @@ justify-content: center;
   margin-top: 20px;
 }
 
-.form-selection select, .sorting select, .button-sorting {
+.form-selection select, .sorting select, .button-filter {
   -webkit-appearance: none;
   background-image: url(../../img/select-arrow.png);
   background-color: #eeeeee;
@@ -855,7 +855,7 @@ justify-content: center;
   background-repeat: no-repeat;
 }
 
-.form-selection select, .sorting select, .button-sorting {
+.form-selection select, .sorting select, .button-filter {
     width: 100%;
     height: 45px;
     margin-bottom: 8px;
@@ -864,6 +864,10 @@ justify-content: center;
     border: none;
     -webkit-border-radius: 10px;
     border-radius: 10px;
+}
+
+.button-filter {
+  padding-left: 0px;
 }
 
 .form-selection .input-b .label {
