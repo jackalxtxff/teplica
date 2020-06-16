@@ -90,89 +90,93 @@
       </div>
       <i class="queue-sort fas fa-sort-amount-down-alt col s1 m1" sorting="ASC"></i>
       <i class="queue-sort fas fa-sort-amount-up-alt col s1 m1" sorting="DESC"></i>
-      <button class="collapsible-header button-sorting col s12 m7">
-        Фильтры
-      </button>
-      <div class="collapsible-body col s12" style="display: none;">
-        <form class="form-selection">
-          <div class="row">
-            <div class="input-b col s12 m4">
-							<div class="label">
-								Ширина
-							</div>
-							<select class="select" name="width">
-                <option value="" selected>Выбрать</option>
-                <?php
-                  $query = mysqli_query($mysql, "SELECT DISTINCT width FROM `catalog_product` ORDER BY `width` ASC");
-                  while($row = mysqli_fetch_assoc($query)) {
-                ?>
-								<option value="<?= $row['width'] ?>"><?= $row['width'] ?> метра</option>
-                <?php } ?>
-							</select>
+      <div class="col s12 m7">
+        <button class="collapsible-header button-sorting">
+          Фильтры
+        </button>
+      </div>
+      <div class="col s12">
+        <div class="collapsible-body" style="display: none;">
+          <form class="form-selection">
+            <div class="row">
+              <div class="input-b col s12 m4">
+                      <div class="label">
+                        Ширина
+                      </div>
+                      <select class="select" name="width">
+                  <option value="" selected>Выбрать</option>
+                  <?php
+                    $query = mysqli_query($mysql, "SELECT DISTINCT width FROM `catalog_product` ORDER BY `width` ASC");
+                    while($row = mysqli_fetch_assoc($query)) {
+                  ?>
+                        <option value="<?= $row['width'] ?>"><?= $row['width'] ?> метра</option>
+                  <?php } ?>
+                      </select>
+              </div>
+              <div class="input-b col s12 m4">
+                      <div class="label">
+                        Высота
+                      </div>
+                      <select class="select" name="height">
+                  <option value="" selected>Выбрать</option>
+                  <?php
+                    $query = mysqli_query($mysql, "SELECT DISTINCT height FROM `catalog_product` ORDER BY `height` ASC");
+                    while($row = mysqli_fetch_assoc($query)) {
+                  ?>
+                        <option value="<?= $row['height'] ?>"><?= $row['height'] ?> метра</option>
+                  <?php } ?>
+                      </select>
+              </div>
+              <div class="input-b col s12 m4">
+                      <div class="label">
+                        Длина
+                      </div>
+                      <select class="select" name="length">
+                  <option value="" selected>Выбрать</option>
+                  <?php
+                    $query = mysqli_query($mysql, "SELECT DISTINCT length FROM `catalog_product` ORDER BY `length` ASC");
+                    while($row = mysqli_fetch_assoc($query)) {
+                  ?>
+                        <option value="<?= $row['length'] ?>"><?= $row['length'] ?> метра</option>
+                  <?php } ?>
+                      </select>
+              </div>
+              <div class="input-b col s12 m4">
+                      <div class="label">
+                        Дуги
+                      </div>
+                      <select class="select" name="arcs">
+                  <option value="" selected>Выбрать</option>
+                  <?php
+                    $query = mysqli_query($mysql, "SELECT * FROM `product_arcs`");
+                    while($row = mysqli_fetch_assoc($query)) {
+                  ?>
+                        <option value="<?= $row['arcs'] ?>"><?= $row['arcs'] ?></option>
+                  <?php } ?>
+                      </select>
+              </div>
+              <div class="input-b col s12 m4">
+                      <div class="label">
+                        Основание
+                      </div>
+                      <select class="select" name="base">
+                  <option value="" selected>Выбрать</option>
+                  <?php
+                    $query = mysqli_query($mysql, "SELECT * FROM `product_base`");
+                    while($row = mysqli_fetch_assoc($query)) {
+                  ?>
+                  <option value="<?= $row['base'] ?>"><?= $row['base'] ?></option>
+                  <?php } ?>
+                      </select>
+              </div>
             </div>
-            <div class="input-b col s12 m4">
-							<div class="label">
-								Высота
-							</div>
-							<select class="select" name="height">
-                <option value="" selected>Выбрать</option>
-                <?php
-                  $query = mysqli_query($mysql, "SELECT DISTINCT height FROM `catalog_product` ORDER BY `height` ASC");
-                  while($row = mysqli_fetch_assoc($query)) {
-                ?>
-								<option value="<?= $row['height'] ?>"><?= $row['height'] ?> метра</option>
-                <?php } ?>
-							</select>
+            <div class="row">
+              <div class="col s12 m4 offset-m4">
+                <button class="button-product selection-btn">Показать</button>
+              </div>
             </div>
-            <div class="input-b col s12 m4">
-							<div class="label">
-								Длина
-							</div>
-							<select class="select" name="length">
-                <option value="" selected>Выбрать</option>
-                <?php
-                  $query = mysqli_query($mysql, "SELECT DISTINCT length FROM `catalog_product` ORDER BY `length` ASC");
-                  while($row = mysqli_fetch_assoc($query)) {
-                ?>
-								<option value="<?= $row['length'] ?>"><?= $row['length'] ?> метра</option>
-                <?php } ?>
-							</select>
-            </div>
-            <div class="input-b col s12 m4">
-							<div class="label">
-								Дуги
-							</div>
-							<select class="select" name="arcs">
-                <option value="" selected>Выбрать</option>
-                <?php
-                  $query = mysqli_query($mysql, "SELECT * FROM `product_arcs`");
-                  while($row = mysqli_fetch_assoc($query)) {
-                ?>
-								<option value="<?= $row['arcs'] ?>"><?= $row['arcs'] ?></option>
-                <?php } ?>
-							</select>
-            </div>
-            <div class="input-b col s12 m4">
-							<div class="label">
-								Основание
-							</div>
-							<select class="select" name="base">
-                <option value="" selected>Выбрать</option>
-                <?php
-                  $query = mysqli_query($mysql, "SELECT * FROM `product_base`");
-                  while($row = mysqli_fetch_assoc($query)) {
-                ?>
-                <option value="<?= $row['base'] ?>"><?= $row['base'] ?></option>
-                <?php } ?>
-							</select>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col s12 m4 offset-m4">
-              <button class="button-product selection-btn">Показать</button>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
     <div class="catalog_wrapper row">
