@@ -102,9 +102,12 @@
 							</div>
 							<select class="select" name="width">
                 <option value="" selected>Выбрать</option>
-								<option value="2">2 метра</option>
-								<option value="2.5">2.5 метра</option>
-								<option value="3">3 метра</option>
+                <?php
+                  $query = mysqli_query($mysql, "SELECT DISTINCT width FROM `catalog_product` ORDER BY `width` ASC");
+                  while($row = mysqli_fetch_assoc($query)) {
+                ?>
+								<option value="<?= $row['width'] ?>"><?= $row['width'] ?> метра</option>
+                <?php } ?>
 							</select>
             </div>
             <div class="input-b col s12 m4">
@@ -113,8 +116,12 @@
 							</div>
 							<select class="select" name="height">
                 <option value="" selected>Выбрать</option>
-								<option value="2">2 метра</option>
-								<option value="3">3 метра</option>
+                <?php
+                  $query = mysqli_query($mysql, "SELECT DISTINCT height FROM `catalog_product` ORDER BY `height` ASC");
+                  while($row = mysqli_fetch_assoc($query)) {
+                ?>
+								<option value="<?= $row['height'] ?>"><?= $row['height'] ?> метра</option>
+                <?php } ?>
 							</select>
             </div>
             <div class="input-b col s12 m4">
@@ -123,11 +130,12 @@
 							</div>
 							<select class="select" name="length">
                 <option value="" selected>Выбрать</option>
-								<option value="4">4 метра</option>
-								<option value="6">6 метров</option>
-								<option value="8">8 метров</option>
-								<option value="10">10 метров</option>
-								<option value="12">12 метров</option>
+                <?php
+                  $query = mysqli_query($mysql, "SELECT DISTINCT length FROM `catalog_product` ORDER BY `length` ASC");
+                  while($row = mysqli_fetch_assoc($query)) {
+                ?>
+								<option value="<?= $row['length'] ?>"><?= $row['length'] ?> метра</option>
+                <?php } ?>
 							</select>
             </div>
             <div class="input-b col s12 m4">
