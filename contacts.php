@@ -54,7 +54,7 @@
 			</div>
 		</div>
 	</section>
-
+<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A414776937dadefb558d4f55bd3abc54b70d26d786021d68d93ba9d7c8f3ead0d&amp;width=100%25&amp;height=402&amp;lang=ru_RU&amp;scroll=true"></script>
 </main>
 
 <?php require_once 'layouts/footer.php' ?>
