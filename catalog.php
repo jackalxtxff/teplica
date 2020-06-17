@@ -5,8 +5,8 @@
 ?>
 
 <main class="transition-fade" id="swup">
-  <h1>Каталог</h1>
   <div class="container">
+    <h1 class="page-title">Каталог</h1>
     <!-- <div class="collapsible row">
       <button class="collapsible-header button-product col s12">
         Нажать

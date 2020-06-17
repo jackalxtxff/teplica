@@ -61,6 +61,7 @@ function bind() {
   $('.modal-overlay').click(function() {
     $(".modal").removeAttr("style");
     $(".modal-overlay").removeAttr("style");
+    $(".success-modal").removeAttr("style");
   });
 
 }
@@ -157,14 +158,12 @@ $('.message-button').click(function(e) {
   e.preventDefault();
 
   let fullname = $('input[name="fullname"]').val(),
-    email = $('input[name="email"]').val(),
-    sex = $('input[name="sex"]').val(),
-    message = $('textarea[name="message"]').val();
+    contact = $('input[name="contact"]').val(),
+    message = $('input[name="message"]').val();
 
   let formData = new FormData();
   formData.append('fullname', fullname);
-  formData.append('email', email);
-  formData.append('sex', sex);
+  formData.append('contact', contact);
   formData.append('message', message);
 
   $.ajax({
@@ -177,19 +176,38 @@ $('.message-button').click(function(e) {
     data: formData,
     success(data) {
       if (data.status) {
-        alert('Сообщение отправлено');
+        let styles = {
+          "z-index": "1003",
+          "display": "block",
+          "opacity": "1",
+          "top": "10%",
+          "transform": "scaleX(1) scaleY(1)"
+        };
+        let styles2 = {
+          "z-index": "1002",
+          "display": "block",
+          "opacity": "0.5"
+        };
+        $('.success-modal').css(styles);
+        $(".modal-overlay").css(styles2);
+        setTimeout(() => $('.circle-loader').toggleClass('load-complete'), 600);
+        setTimeout(() => $('.checkmark').toggle(), 600);
       } else {
         if (data.type === 1) {
           data.fields.forEach(function(field) {
             $(`input[name="${field}"]`).addClass('is-invalid');
+            $(`input[name="${field}"]`).parents('.form__group').find('label').addClass('is-invalid__label');
             $(`textarea[name="${field}"]`).addClass('is-invalid');
           });
         }
-        alert(data.message);
+        // alert(data.message);
       }
     }
   });
+});
 
+$('input.form__control').click(function() {
+  $(this).removeClass('is-invalid').parents('.form__group').find('label').removeClass('is-invalid__label');
 });
 
 $('.order-button').click(function(e) {

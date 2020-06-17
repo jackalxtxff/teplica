@@ -22,10 +22,7 @@
 
       </div>
       <div class="text_about"><img class="img-responsive" src="assets/img/glavnaya.jpg"></div>
-
     </div>
-
-
   </div>
 </main>
 
