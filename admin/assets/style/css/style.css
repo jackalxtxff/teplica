@@ -335,3 +335,11 @@ input {
 .btn:hover, .btn-large:hover{
   background-color: #6c3;
 }
+
+.ticking-clock {
+  font-size: 15px;
+  display: inline-block;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
+}

@@ -23,7 +23,7 @@ $(document).ready(function() {
 })
 
 
-$(document).ready(function(){
+$(document).ready(function() {
   $('select').formSelect();
 });
 
@@ -150,8 +150,8 @@ $(document).ready(function() {
     let elem = e.currentTarget;
 
     let product_value = $(elem).parents('.edit-box').find('.input-field input[name="change-value"]').val(),
-        product_id = $(elem).parents('tr').find('.id').text(),
-        column_name = $(elem).parents('td').attr('class');
+      product_id = $(elem).parents('tr').find('.id').text(),
+      column_name = $(elem).parents('td').attr('class');
 
     if (!product_value) {
       product_value = $(elem).parents('.edit-box').find('select[name="change-value"]').val();
@@ -375,16 +375,16 @@ $('.access-button').click(function(e) {
   e.preventDefault();
 
   let product_name = $('input[name="product_name"]').val(),
-      material_type = $('select[name="material_type"]').val(),
-      product_price = $('input[name="product_price"]').val(),
-      discount_price = $('input[name="discount_price"]').val(),
-      width = $('input[name="width"]').val(),
-      height = $('input[name="height"]').val(),
-      length = $('input[name="length"]').val(),
-      arcs = $('select[name="arcs"]').val(),
-      base = $('select[name="base"]').val(),
-      durability = $('select[name="durability"]').val(),
-      description = $('textarea[name="description"]').val();
+    material_type = $('select[name="material_type"]').val(),
+    product_price = $('input[name="product_price"]').val(),
+    discount_price = $('input[name="discount_price"]').val(),
+    width = $('input[name="width"]').val(),
+    height = $('input[name="height"]').val(),
+    length = $('input[name="length"]').val(),
+    arcs = $('select[name="arcs"]').val(),
+    base = $('select[name="base"]').val(),
+    durability = $('select[name="durability"]').val(),
+    description = $('textarea[name="description"]').val();
 
   let formData = new FormData();
   formData.append('product_name', product_name);
@@ -418,10 +418,10 @@ $('.access-button').click(function(e) {
         });
       } else {
         if (data.type == 1) {
-          data.fields.forEach(function (field) {
-              $(`input[name="${field}"]`).addClass('invalid');
-              $(`select[name="${field}"]`).parent('.select-wrapper').children('.select-dropdown').addClass('invalid');
-              $(`textarea[name="${field}"]`).addClass('invalid');
+          data.fields.forEach(function(field) {
+            $(`input[name="${field}"]`).addClass('invalid');
+            $(`select[name="${field}"]`).parent('.select-wrapper').children('.select-dropdown').addClass('invalid');
+            $(`textarea[name="${field}"]`).addClass('invalid');
           });
           let toastHTML = `<span>${data.message}</span>`;
           M.toast({
@@ -476,4 +476,16 @@ $('.action-btn').click(function(e) {
 
     }
   });
+});
+
+$(document).ready(function() {
+  function displayTime() {
+    var currentDate = new Date();
+    var currentTime = currentDate.toLocaleTimeString();
+
+    $('.ticking-clock span').text(currentTime);
+  }
+
+  displayTime();
+  setInterval(displayTime, 1000);
 });

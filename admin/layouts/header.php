@@ -38,6 +38,9 @@
       <nav class="navbar">
         <div class="nav-wrapper">
           <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
+          <div class="ticking-clock">
+            <span>часы</span>
+          </div>
           <ul id="nav-mobile" class="right">
             <!-- <li class="hide-on-med-and-down">
               <a href="#!" class="waves-effect"><i class="material-icons">notifications</i></a>
