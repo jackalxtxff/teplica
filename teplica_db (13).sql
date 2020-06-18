@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июн 16 2020 г., 17:50
+-- Время создания: Июн 18 2020 г., 15:12
 -- Версия сервера: 8.0.19
 -- Версия PHP: 7.1.33
 
@@ -58,7 +58,8 @@ INSERT INTO `catalog_product` (`id`, `product_name`, `product_price`, `discount_
 (40, 'теплица 7', '13500.00', '0.00', 'Поликарбонат', 2, 2, 8, 'профильная труба 40*20мм толщина стенки 1,2мм', 'профильная труба 25*25мм', 'Высокая', 'тепилца', 'assets/uploads/1592316435.jpg', 1),
 (41, 'теплица 8', '13500.00', '0.00', 'Поликарбонат', 2, 2, 8, 'профильная труба 20*20мм толщина стенки 1,2мм', 'профильная труба 25*25мм', 'Высокая', 'тепилца', 'assets/uploads/1592316693.jpg', 1),
 (42, 'теплица 9', '13500.00', '0.00', 'Поликарбонат', 2, 2, 8, 'профильная труба 20*20мм толщина стенки 1,2мм', 'профильная труба 25*25мм', 'Высокая', 'тепилца', 'assets/uploads/1592316710.jpg', 1),
-(43, 'теплица 10', '13500.00', '0.00', 'Поликарбонат', 2, 2, 8, 'профильная труба 20*20мм толщина стенки 1,2мм', 'профильная труба 25*25мм', 'Высокая', 'тепилца', 'assets/uploads/1592316721.jpg', 1);
+(43, 'теплица 10', '13500.00', '0.00', 'Поликарбонат', 2, 2, 8, 'профильная труба 20*20мм толщина стенки 1,2мм', 'профильная труба 25*25мм', 'Высокая', 'тепилца', 'assets/uploads/1592316721.jpg', 1),
+(44, 'Teplica \"Matveychick\"', '26500.00', '0.00', 'Поликарбонат', 2, 6, 5, 'профильная труба 40*20мм толщина стенки 1,2мм', 'профильная труба 40*20мм', 'Максимальная', 'Теплица от матвея', 'assets/uploads/1592329619.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -81,17 +82,59 @@ INSERT INTO `material_type` (`id`, `material_type`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `messages`
+--
+
+CREATE TABLE `messages` (
+  `id` int NOT NULL,
+  `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT 'Имя',
+  `contact` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT 'Почта/телефон',
+  `message` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT 'Сообщение'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `messages`
+--
+
+INSERT INTO `messages` (`id`, `name`, `contact`, `message`) VALUES
+(1, 'fghj', '567', 'fghj'),
+(2, '', '74567', ''),
+(3, '', '74567', ''),
+(4, '', '3456', ''),
+(5, '', '85678', ''),
+(6, '', '6879', ''),
+(7, '', 'hdfgh', ''),
+(8, '', 'dfgjdfghj', ''),
+(9, '', 'admin@admin.com', ''),
+(10, '', '89124662693', '');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `orders`
 --
 
 CREATE TABLE `orders` (
   `id` int NOT NULL,
-  `name` varchar(100) NOT NULL COMMENT 'Имя',
-  `email` varchar(100) NOT NULL COMMENT 'Почта',
-  `number` varchar(20) NOT NULL COMMENT 'Номер телефона',
-  `adress` varchar(255) NOT NULL COMMENT 'Аресс',
-  `product_id` int NOT NULL COMMENT 'Товар'
+  `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT 'Имя',
+  `email` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT 'Почта',
+  `number` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT 'Номер телефона',
+  `adress` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT 'Аресс',
+  `product_id` int DEFAULT NULL COMMENT 'Товар'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `orders`
+--
+
+INSERT INTO `orders` (`id`, `name`, `email`, `number`, `adress`, `product_id`) VALUES
+(1, 'апро', 'апро', 'апро', 'оапро', 16),
+(2, 'dfgh', 'dfgh', 'dfgh', 'dfgh', 17),
+(3, 'dfgh', 'dfgh', 'dfgh', 'dfgh', 39),
+(4, 'dfgh', 'dfgh', 'dfgh', 'dfgh', 39),
+(5, 'dfgh', 'dfgh', 'dfgh', 'dfgh', 17),
+(6, 'dfgh', 'dfgh', '3645', 'cvbbc', 39),
+(7, 'dfgh', 'dfgh', 'dfgh', 'fdgh', 17);
 
 -- --------------------------------------------------------
 
@@ -156,20 +199,6 @@ INSERT INTO `product_durability` (`id`, `durability`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `questions`
---
-
-CREATE TABLE `questions` (
-  `id` int NOT NULL,
-  `name` varchar(100) NOT NULL COMMENT 'Имя',
-  `email` varchar(100) NOT NULL COMMENT 'Почта',
-  `gender` varchar(10) NOT NULL COMMENT 'Пол',
-  `message` varchar(1000) NOT NULL COMMENT 'Сообщение'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Структура таблицы `users`
 --
 
@@ -209,6 +238,12 @@ ALTER TABLE `material_type`
   ADD KEY `material_type` (`material_type`);
 
 --
+-- Индексы таблицы `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `orders`
 --
 ALTER TABLE `orders`
@@ -237,12 +272,6 @@ ALTER TABLE `product_durability`
   ADD KEY `durability` (`durability`);
 
 --
--- Индексы таблицы `questions`
---
-ALTER TABLE `questions`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Индексы таблицы `users`
 --
 ALTER TABLE `users`
@@ -256,7 +285,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `catalog_product`
 --
 ALTER TABLE `catalog_product`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=44;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT для таблицы `material_type`
@@ -265,10 +294,16 @@ ALTER TABLE `material_type`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT для таблицы `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT для таблицы `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT для таблицы `product_arcs`
@@ -287,12 +322,6 @@ ALTER TABLE `product_base`
 --
 ALTER TABLE `product_durability`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT для таблицы `questions`
---
-ALTER TABLE `questions`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
