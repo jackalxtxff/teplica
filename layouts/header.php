@@ -30,7 +30,7 @@
 	<header>
     <div class="logo">
   		<a href="<?php echo $url_index; ?>">
-  			<img class="logo-img" src="assets/img/logot.jpg" width="200" height="200" alt="logo">
+  			<img class="logo-img" src="assets/img/logotype.png" width="240" height="240" alt="logo">
   			<h2 class="logo-text">Теплицы</h2>
   		</a>
   	</div>

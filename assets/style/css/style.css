@@ -26,7 +26,7 @@ header {
 .logo {
   display: flex;
   padding-left: 15%;
-  padding-top: 3%;
+  /* padding-top: 3%; */
   box-sizing: border-box;
 }
 
@@ -611,7 +611,7 @@ textarea {
     width: auto;
   }
 }
-@media screen and (max-width: 955px) {
+@media screen and (max-width: 1000px) {
   .topnav a {
     display: none;
   }
