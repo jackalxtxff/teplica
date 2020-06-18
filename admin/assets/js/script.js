@@ -197,15 +197,40 @@ $(document).ready(function() {
 
 
 
-
+$(document).ready(function() {
+  $('#table-orders').DataTable({
+    language: {
+      search: "",
+      searchPlaceholder: "Что нужно искать",
+      info: "Отображение с _START_ по _END_ запись, всего _TOTAL_ записей",
+      infoEmpty: "Отображение 0 из 0 записей, всего 0 записей",
+      lengthMenu: "Показать _MENU_ записей",
+      emptyTable: "Данные отсутствуют"
+    },
+    dom: 'ft<"footer-wrapper"l<"paging-info"ip>>',
+    scrollY: "400px",
+    // scrollX: true,
+    scrollCollapse: !0,
+    pagingType: "full"
+    // paging: true,
+    // scrollY: 400,
+    // select: true,
+    // "lengthChange": false,
+    // "lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ]
+  });
+});
 
 
 
 $(document).ready(function() {
-  $('#table-user').DataTable({
+  $('#table-messages').DataTable({
     language: {
       search: "",
-      searchPlaceholder: "Enter search term"
+      searchPlaceholder: "Что нужно искать",
+      info: "Отображение с _START_ по _END_ запись, всего _TOTAL_ записей",
+      infoEmpty: "Отображение 0 из 0 записей, всего 0 записей",
+      lengthMenu: "Показать _MENU_ записей",
+      emptyTable: "Данные отсутствуют"
     },
     dom: 'ft<"footer-wrapper"l<"paging-info"ip>>',
     scrollY: "400px",
@@ -224,7 +249,11 @@ $(document).ready(function() {
   $('#table-product').DataTable({
     language: {
       search: "",
-      searchPlaceholder: "Что нужно искать"
+      searchPlaceholder: "Что нужно искать",
+      info: "Отображение с _START_ по _END_ запись, всего _TOTAL_ записей",
+      infoEmpty: "Отображение 0 из 0 записей, всего 0 записей",
+      lengthMenu: "Показать _MENU_ записей",
+      emptyTable: "Данные отсутствуют"
     },
     dom: 'ft<"footer-wrapper"l<"paging-info"ip>>',
     scrollY: "700px",

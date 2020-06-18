@@ -859,6 +859,10 @@ h1.page-title {
   background-repeat: no-repeat;
 }
 
+.reset {
+  background-image: none;
+}
+
 .form-selection select, .sorting select, .button-filter {
     width: 100%;
     height: 45px;

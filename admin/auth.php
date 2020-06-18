@@ -108,19 +108,19 @@ input {
 
     <div id="login">
 
-      <h2><span class="fontawesome-lock"></span>Sign In</h2>
+      <h2><span class="fontawesome-lock"></span>Авторизация</h2>
 
       <form action="#" method="POST">
 
         <fieldset>
 
-          <p><label for="email">E-mail address</label></p>
+          <p><label for="email">Электронная почта</label></p>
           <p><input name="email" type="email" id="email" placeholder="mail@address.com"></p>
 
-          <p><label for="password">Password</label></p>
+          <p><label for="password">Пароль</label></p>
           <p><input name="password" type="password" id="password" placeholder="password"></p>
 
-          <p><input class="signin-btn" type="submit" value="Sign In"></p>
+          <p><input class="signin-btn" type="submit" value="Войти"></p>
 
         </fieldset>
 

@@ -329,9 +329,9 @@ input {
   margin: 0 auto;
   width: 90%;
 }
-.btn{
+.btn, .btn-large {
   background-color:#59A857;
 }
-.btn:hover{
+.btn:hover, .btn-large:hover{
   background-color: #6c3;
 }

@@ -7,9 +7,10 @@
 <?php
   $url = $_SERVER["REQUEST_URI"];
 
-  $url_users = "/admin/users";
   $url_products = "/admin/products";
   $url_addproducts = "/admin/addproducts";
+  $url_messages =  "/admin/messages";
+  $url_orders = "/admin/orders";
 
   $c_active = 'class="active"';
   $active = 'active';
@@ -56,7 +57,7 @@
       <li><a href="#" class="logo-container">Admin<i class="material-icons left">spa</i></a></li>
       <li class="no-padding">
         <ul class="collapsible collapsible-accordion">
-          <li class="waves-effect  <?php if ($url == $url_products || $url == $url_users || $url == $url_addproducts) {echo $active;} ?>">
+          <li class="waves-effect <?php if ($url == $url_products || $url == $url_addproducts) {echo $active;} ?>">
             <a class="collapsible-header">Управление товарами<i class="material-icons chevron">chevron_left</i></a>
             <div class="collapsible-body">
               <ul>
@@ -65,17 +66,15 @@
               </ul>
             </div>
           </li>
-          <!-- <li class="waves-effect">
-            <a class="collapsible-header">Dropdown<i class="material-icons chevron">chevron_left</i></a>
+          <li class="waves-effect <?php if ($url == $url_messages || $url == $url_orders) {echo $active;} ?>">
+            <a class="collapsible-header">Заказы<i class="material-icons chevron">chevron_left</i></a>
             <div class="collapsible-body">
               <ul>
-                <li><a class="waves-effect" href="#!">First</a></li>
-                <li><a class="waves-effect">Second</a></li>
-                <li><a class="waves-effect">Third</a></li>
-                <li><a class="waves-effect">Fourth</a></li>
+                <li><a class="waves-effect <?php if ($url == $url_messages) {echo $active;} ?>" href="<?php echo $url_messages ?>"><i class="material-icons">mail</i>Сообщения</a></li>
+                <li><a class="waves-effect <?php if ($url == $url_orders) {echo $active;} ?>" href="<?php echo $url_orders ?>"><i class="material-icons">chrome_reader_mode</i>Заказы</a></li>
               </ul>
             </div>
-          </li> -->
+          </li>
         </ul>
       </li>
     </ul>
