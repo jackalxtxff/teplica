@@ -35,22 +35,22 @@
       </div>
       <div class="row">
         <div class="product_about col s12 m6">
-          <p class="title-about">О товаре</p>
+          <p class="title-about" style="font-weight:bold">О товаре</p>
           <div class="description">
             <div class="product_description">
-              <p class="title"><span  style="font-weight:bold">Описание:</span><span> <?= $product['description'] ?></span></p>
+              <p class="title"><span  style="font-weight:bold"></i> Описание:</span><span> <?= $product['description'] ?></span></p>
             </div>
             <div class="material_type">
-              <p class="title"><span  style="font-weight:bold">Тип материала:</span><span> <?= $product['material_type'] ?></span></p>
+              <p class="title"><span  style="font-weight:bold"></i> Тип материала:</span><span> <?= $product['material_type'] ?></span></p>
             </div>
             <div class="product_arcs">
-              <p class="title"><span  style="font-weight:bold">Дуги:</span><span> <?= $product['arcs'] ?></span></p>
+              <p class="title"><span  style="font-weight:bold"></i> Дуги:</span><span> <?= $product['arcs'] ?></span></p>
             </div>
             <div class="product_base">
-              <p class="title"><span  style="font-weight:bold">Основание:</span><span> <?= $product['base'] ?></span></p>
+              <p class="title"><span  style="font-weight:bold"></i> Основание:</span><span> <?= $product['base'] ?></span></p>
             </div>
             <div class="product_durability">
-              <p class="title"><span  style="font-weight:bold">Прочность:</span><span> <?= $product['durability'] ?></span></p> 
+              <p class="title"><span  style="font-weight:bold"></i> Прочность:</span><span> <?= $product['durability'] ?></span></p>
             </div>
           </div>
         </div>
