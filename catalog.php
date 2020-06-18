@@ -211,22 +211,22 @@
             <p class="title-about">О товаре</p>
             <div class="description">
               <div class="product_size">
-                <p>Размеры: <span class="product_size"></span></p>
+                <p><span style="font-weight:bold">Размеры:</span> <span class="product_size"></span></p>
               </div>
               <div class="material_type">
-                <p>Материал: <span class="material_type"></span></p>
+                <p><span style="font-weight:bold">Материал:</span> <span class="material_type"></span></p>
               </div>
               <div class="product_arcs">
-                <p>Дуги: <span class="product_arcs"></span></p>
+                <p><span style="font-weight:bold">Дуги:</span> <span class="product_arcs"></span></p>
               </div>
               <div class="product_base">
-                <p>Основание: <span class="product_base"></span></p>
+                <p><span style="font-weight:bold">Основание:</span> <span class="product_base"></span></p>
               </div>
               <div class="product_durability">
-                <p>Прочность: <span class="product_durability"></span></p>
+                <p><span style="font-weight:bold">Прочность:</span> <span class="product_durability"></span></p>
               </div>
               <div class="product_description">
-                <p>Описание: <span class="product_description"></span></p>
+                <p><span style="font-weight:bold">Описание:</span> <span class="product_description"></span></p>
               </div>
             </div>
           </div>
