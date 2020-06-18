@@ -17,7 +17,8 @@
     </div>
     <div class="product-item_description">
       <p class="product-item_size">Размеры: ширина <?= $row['width'] ?> м, высота <?= $row['height'] ?> м, длина <?= $row['length'] ?> м</p>
-      <p class="description"><?= $row['description'] ?><p>
+      <p class="arcs">Дуги: <?= $row['arcs'] ?><p>
+      <p class="base">Основание: <?= $row['base'] ?><p>
     </div>
     <div class="product-time_btn">
       <button class="button-product modal-buy-trigger">ЗАКАЗАТЬ</button>

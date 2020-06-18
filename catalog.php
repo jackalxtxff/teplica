@@ -214,7 +214,7 @@
                 <p>Размеры: <span class="product_size"></span></p>
               </div>
               <div class="material_type">
-                <p>Материал: </p><span class="material_type"></span>
+                <p>Материал: <span class="material_type"></span></p>
               </div>
               <div class="product_arcs">
                 <p>Дуги: <span class="product_arcs"></span></p>

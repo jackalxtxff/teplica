@@ -26,7 +26,7 @@
         die();
     } else {
 
-      mysqli_query($mysql, "INSERT INTO `questions` (`id`, `name`, `contact`, `message`) VALUES
+      mysqli_query($mysql, "INSERT INTO `messages` (`id`, `name`, `contact`, `message`) VALUES
       (NULL, '$fullname', '$contact', '$message')");
 
       $response = [

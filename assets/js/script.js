@@ -55,15 +55,18 @@ function bind() {
 
   });
   $(".modal-close").click(function() {
-    $(".modal").removeAttr("style");
-    $(".modal-overlay").removeAttr("style");
+    modalClose();
   });
   $('.modal-overlay').click(function() {
-    $(".modal").removeAttr("style");
-    $(".modal-overlay").removeAttr("style");
-    $(".success-modal").removeAttr("style");
+    modalClose();
   });
 
+}
+
+function modalClose() {
+  $(".modal").removeAttr("style");
+  $(".modal-overlay").removeAttr("style");
+  $(".success-modal").removeAttr("style");
 }
 
 function productItemHover() {
@@ -192,6 +195,7 @@ $('.message-button').click(function(e) {
         $(".modal-overlay").css(styles2);
         setTimeout(() => $('.circle-loader').toggleClass('load-complete'), 600);
         setTimeout(() => $('.checkmark').toggle(), 600);
+        setTimeout(() => modalClose(), 2000);
       } else {
         if (data.type === 1) {
           data.fields.forEach(function(field) {
