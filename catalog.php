@@ -235,16 +235,21 @@
       <div class="feedback">
         <form action="">
           <h4 style="display: inline-block;">Оставьте свои контакты, чтобы мы связались с вами</h4>
-          <input type="text" class="form-field" name="name" placeholder="ФИО">
-          <input type="text" class="form-field" name="email" placeholder="Почта">
-          <input type="text" class="form-field" name="phone" placeholder="Номер телефона">
-          <input type="text" class="form-field" name="adres" placeholder="Адрес">
+          <input type="text" class="form-field" name="name" placeholder="ФИО *">
+          <input type="text" class="form-field" name="email" placeholder="Почта *">
+          <input type="text" class="form-field" name="phone" placeholder="Номер телефона *">
+          <input type="text" class="form-field" name="adres" placeholder="Адрес *">
         </form>
       </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close btn-flat order-button" product_id="">Заказать</a>
+      <a href="#!" class="btn-flat order-button" product_id="">Заказать</a>
       <a href="#!" class="modal-close btn-flat">Отменить</a>
+    </div>
+  </div>
+  <div class="success-modal">
+    <div class="circle-loader">
+      <div class="checkmark draw"></div>
     </div>
   </div>
   <div class="modal-overlay"></div>

@@ -711,7 +711,6 @@ flex-wrap: wrap;
 justify-content: center;
 }
 h1.page-title {
-	height: 50px;
   color: green;
   font-size: 32px;
   margin-left: 0.75rem;

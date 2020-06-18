@@ -240,15 +240,39 @@ $('.order-button').click(function(e) {
     data: formData,
     success(data) {
       if (data.status) {
-        alert('Заказ зарегистрирован');
+        let styles = {
+          "z-index": "1003",
+          "display": "block",
+          "opacity": "1",
+          "top": "10%",
+          "transform": "scaleX(1) scaleY(1)"
+        };
+        let styles2 = {
+          "z-index": "1002",
+          "display": "block",
+          "opacity": "0.5"
+        };
+        $('.success-modal').css(styles);
+        $(".modal-overlay").css(styles2);
+        setTimeout(() => $('.circle-loader').toggleClass('load-complete'), 600);
+        setTimeout(() => $('.checkmark').toggle(), 600);
+        setTimeout(() => modalClose(), 2000);
       } else {
-        alert(data.message);
+        if (data.type === 1) {
+          data.fields.forEach(function(field) {
+            $(`input[name="${field}"]`).addClass('is-invalid');
+          });
+        }
       }
     }
   });
 
 });
 
+$('.form-field').click(function(e) {
+  elem = e.currentTarget;
+  $(elem).removeClass('is-invalid');
+});
 
 
 
@@ -295,7 +319,13 @@ function selection() {
         $('.selection-btn').text(`Показать (совпадений ${data.count})`)
         load = data.load;
       } else {
-        alert(data.message);
+        if (data.type === 1) {
+          data.fields.forEach(function(field) {
+            $(`input[name="${field}"]`).addClass('is-invalid');
+            $(`input[name="${field}"]`).parents('.form__group').find('label').addClass('is-invalid__label');
+            $(`textarea[name="${field}"]`).addClass('is-invalid');
+          });
+        }
       }
     }
   });

@@ -11,8 +11,8 @@
 
     $error_fields = [];
 
-    if ($fullaname === '') {
-        $error_fields[] = 'fullname';
+    if ($fullname === '') {
+        $error_fields[] = 'name';
     }
 
     if ($email === '') {
@@ -20,10 +20,10 @@
     }
 
     if ($number === '') {
-        $error_fields[] = 'number';
+        $error_fields[] = 'phone';
     }
 
-    if ($adres === '') {
+    if ($adress === '') {
         $error_fields[] = 'adres';
     }
 
