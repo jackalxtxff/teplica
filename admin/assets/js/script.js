@@ -492,7 +492,6 @@ $(document).ready(function() {
     var currentDate = new Date();
     var currentTime = currentDate.toLocaleTimeString();
     var currentDay = currentDate.getDay();
-    var outDate = currentTime + " " + days[currentDay] + " ";
     var outDate = `${currentTime} ${days[currentDay]}(${currentDay})`;
 
     $('.ticking-clock span').text(outDate);
