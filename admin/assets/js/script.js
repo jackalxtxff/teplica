@@ -480,10 +480,22 @@ $('.action-btn').click(function(e) {
 
 $(document).ready(function() {
   function displayTime() {
+    var days = [
+      'Воскресенье',
+      'Понедельник',
+      'Вторник',
+      'Среда',
+      'Четверг',
+      'Пятница',
+      'Суббота'
+    ];
     var currentDate = new Date();
     var currentTime = currentDate.toLocaleTimeString();
+    var currentDay = currentDate.getDay();
+    var outDate = currentTime + " " + days[currentDay] + " ";
+    var outDate = `${currentTime} ${days[currentDay]}(${currentDay})`;
 
-    $('.ticking-clock span').text(currentTime);
+    $('.ticking-clock span').text(outDate);
   }
 
   displayTime();
