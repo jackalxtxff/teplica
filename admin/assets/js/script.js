@@ -289,9 +289,11 @@ $(document).ready(function() {
     var currentDate = new Date();
     var currentTime = currentDate.toLocaleTimeString();
     var currentDay = currentDate.getDay();
-    var outDate = `${currentTime} ${days[currentDay]}(${currentDay})`;
+    var outTime = `${currentTime} ${days[currentDay]}(${currentDay})`;
+    var outDate = `${currentDate.getFullYear()}.${currentDate.getMonth() + 1}.${currentDate.getDate()}`;
+    var outFullDate = `${outDate} ${outTime}`;
 
-    $('.ticking-clock span').text(outDate);
+    $('.ticking-clock span').text(outFullDate);
   }
 
   displayTime();
